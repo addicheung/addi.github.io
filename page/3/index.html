@@ -142,75 +142,6 @@
       <div class="body-wrap">
         
   
-    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-12" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/29/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-12/">Android学习笔记-12</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Android的文件操作模式："><a href="#Android的文件操作模式：" class="headerlink" title="Android的文件操作模式："></a>Android的文件操作模式：</h3><ol>
-<li>MODE_PEIVATE –&gt;默认操作模式，代表该文件是私有数据，只能被本应用本身访问，写入的内容会覆盖原文件的内容</li>
-<li>MODE_APPEND –&gt;会检验文件是否存在，存在的话往文件追加内容，否则建立新文件</li>
-<li>MODE_WORLD_READBLE –&gt;当前文件可以被其他应用读取</li>
-<li>MODE_WORLD_WRITEBLE –&gt;当前文件可以被其他应用写入<br><span style="color: #ff0000;">PS:</span><span style="color: #000000;">后面两个用于控制其他应用是否有读写文件的权限，如果文件既可写又可读的话</span></li>
-</ol>
-<p><span style="color: #000000;">可以写成下面的形式：</span></p>
-<p><span style="color: #008000;">openFileOutput(“<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>.txt”,Context.MODE_WORLD_READBLE +Context.MODE_WORLD_WRITEBLE);</span></p>
-<p>&nbsp;</p>
-<h3 id="文件操作常用方法："><a href="#文件操作常用方法：" class="headerlink" title="文件操作常用方法："></a>文件操作常用方法：</h3><p><img src="http://www.runoob.com/wp-content/uploads/2015/09/95941036.jpg" alt=""></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<h3 id="读取-写入SD卡："><a href="#读取-写入SD卡：" class="headerlink" title="读取/写入SD卡："></a>读取/写入SD卡：</h3><p><img src="http://www.runoob.com/wp-content/uploads/2015/09/61882958.jpg" alt=""></p>
-<p>&nbsp;</p>
-<p>图片来源：<a href="http://www.runoob.com/w3cnote/android-tutorial-file.html" target="_blank" rel="external">菜鸟教程</a></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/02/29/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-12/" class="archive-article-date">
-  	<time datetime="2016-02-29T08:41:46.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-29</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android笔记/">android笔记</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-11" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -229,12 +160,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Fragment生命周期："><a href="#Fragment生命周期：" class="headerlink" title="Fragment生命周期："></a>Fragment生命周期：</h4><p><a href="http://www.alimodern.com/wp-content/uploads/2016/02/fragment生命周期.jpg" target="_blank" rel="external"><img src="http://www.alimodern.com/wp-content/uploads/2016/02/fragment生命周期-686x1024.jpg" alt="fragment生命周期"></a></p>
-<h4 id="隐藏Acntionbar"><a href="#隐藏Acntionbar" class="headerlink" title="隐藏Acntionbar:"></a>隐藏Acntionbar:</h4><p>1、</p>
-<p>把 requestWindowFeature(Window.FEATURE_NO_TITLE);放在super.onCreate(savedInstanceState);前面就可以隐藏ActionBar而不报错。</p>
-<h4 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h4><p><pre class="prettyprint prettyprinted"><span class="pln">android</span><span class="pun">:</span><span class="pln">theme</span><span class="pun">=</span><span class="str">“@style/Theme.AppCompat.NoActionBar”<br></span>同时在style.xml中<br> &lt;style name=”AppTheme” parent=”Theme.AppCompat.XXX.NoActionBar”&gt;</pre><br>&nbsp;</p>
-<h4 id="FragmentTransaction使用："><a href="#FragmentTransaction使用：" class="headerlink" title="FragmentTransaction使用："></a><strong>FragmentTransaction使用：</strong></h4><p>FragmentTransaction只能使用一次，每次使用都要调用FragmentManager 的beginTransaction()方法获得FragmentTransaction事务对象哦！</p>
-
+        <h4 id="Fragment生命周期："><a href="#Fragment生命周期：" class="headerlink" title="Fragment生命周期："></a>Fragment生命周期：</h4><p><a href="http://www.alimodern.com/wp-content/uploads/2016/02/fragment生命周期.jpg"><img src="http://www.alimodern.com/wp-content/uploads/2016/02/fragment生命周期-686x1024.jpg" alt="fragment生命周期"></a></p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-11/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -289,247 +218,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="BroadcastReceiver使用注意事项："><a href="#BroadcastReceiver使用注意事项：" class="headerlink" title="BroadcastReceiver使用注意事项："></a>BroadcastReceiver使用注意事项：</h3><p>不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！</p>
-<p>&nbsp;</p>
-<p>常用Intent:(mark)</p>
-<pre class="prettyprint prettyprinted"><span class="com">//===============================================================</span>
-<span class="com">//1.拨打电话</span>
-<span class="com">// 给移动客服10086拨打电话</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"tel:10086"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_DIAL</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//2.发送短信</span>
-<span class="com">// 给10086发送内容为“Hello”的短信</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"smsto:10086"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SENDTO</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"sms_body"</span><span class="pun">,</span> <span class="str">"Hello"</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//3.发送彩信（相当于发送带附件的短信）</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SEND</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"sms_body"</span><span class="pun">,</span> <span class="str">"Hello"</span><span class="pun">);</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"content://media/external/images/media/23"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_STREAM</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"image/png"</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//4.打开浏览器:</span>
-<span class="com">// 打开百度主页</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"http://www.baidu.com"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent  </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//5.发送电子邮件:(阉割了Google服务的没戏!!!!)</span>
-<span class="com">// 给someone@domain.com发邮件</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"mailto:someone@domain.com"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SENDTO</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-<span class="com">// 给someone@domain.com发邮件发送内容为“Hello”的邮件</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SEND</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_EMAIL</span><span class="pun">,</span> <span class="str">"someone@domain.com"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_SUBJECT</span><span class="pun">,</span> <span class="str">"Subject"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_TEXT</span><span class="pun">,</span> <span class="str">"Hello"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"text/plain"</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-<span class="com">// 给多人发邮件</span>
-<span class="typ">Intent</span><span class="pln"> intent</span><span class="pun">=</span><span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SEND</span><span class="pun">);</span>
-<span class="typ">String</span><span class="pun">[]</span><span class="pln"> tos </span><span class="pun">=</span> <span class="pun">{</span><span class="str">"1@abc.com"</span><span class="pun">,</span> <span class="str">"2@abc.com"</span><span class="pun">};</span> <span class="com">// 收件人</span>
-<span class="typ">String</span><span class="pun">[]</span><span class="pln"> ccs </span><span class="pun">=</span> <span class="pun">{</span><span class="str">"3@abc.com"</span><span class="pun">,</span> <span class="str">"4@abc.com"</span><span class="pun">};</span> <span class="com">// 抄送</span>
-<span class="typ">String</span><span class="pun">[]</span><span class="pln"> bccs </span><span class="pun">=</span> <span class="pun">{</span><span class="str">"5@abc.com"</span><span class="pun">,</span> <span class="str">"6@abc.com"</span><span class="pun">};</span> <span class="com">// 密送</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_EMAIL</span><span class="pun">,</span><span class="pln"> tos</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_CC</span><span class="pun">,</span><span class="pln"> ccs</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_BCC</span><span class="pun">,</span><span class="pln"> bccs</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_SUBJECT</span><span class="pun">,</span> <span class="str">"Subject"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_TEXT</span><span class="pun">,</span> <span class="str">"Hello"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"message/rfc822"</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//6.显示地图:</span>
-<span class="com">// 打开Google地图中国北京位置（北纬39.9，东经116.3）</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"geo:39.9,116.3"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//7.路径规划</span>
-<span class="com">// 路径规划：从北京某地（北纬39.9，东经116.3）到上海某地（北纬31.2，东经121.4）</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"http://maps.google.com/maps?f=d&amp;saddr=39.9 116.3&amp;daddr=31.2 121.4"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//8.多媒体播放:</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">);</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"file:///sdcard/foo.mp3"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setDataAndType</span><span class="pun">(</span><span class="pln">uri</span><span class="pun">,</span> <span class="str">"audio/mp3"</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//获取SD卡下所有音频文件,然后播放第一首=-= </span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">withAppendedPath</span><span class="pun">(</span><span class="typ">MediaStore</span><span class="pun">.</span><span class="typ">Audio</span><span class="pun">.</span><span class="typ">Media</span><span class="pun">.</span><span class="pln">INTERNAL_CONTENT_URI</span><span class="pun">,</span> <span class="str">"1"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//9.打开摄像头拍照:</span>
-<span class="com">// 打开拍照程序</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">MediaStore</span><span class="pun">.</span><span class="pln">ACTION_IMAGE_CAPTURE</span><span class="pun">);</span><span class="pln"> 
-startActivityForResult</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">);</span>
-<span class="com">// 取出照片数据</span>
-<span class="typ">Bundle</span><span class="pln"> extras </span><span class="pun">=</span><span class="pln"> intent</span><span class="pun">.</span><span class="pln">getExtras</span><span class="pun">();</span> 
-<span class="typ">Bitmap</span><span class="pln"> bitmap </span><span class="pun">=</span> <span class="pun">(</span><span class="typ">Bitmap</span><span class="pun">)</span><span class="pln"> extras</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">"data"</span><span class="pun">);</span>
-
-<span class="com">//另一种:</span>
-<span class="com">//调用系统相机应用程序，并存储拍下来的照片</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">MediaStore</span><span class="pun">.</span><span class="pln">ACTION_IMAGE_CAPTURE</span><span class="pun">);</span><span class="pln"> 
-time </span><span class="pun">=</span> <span class="typ">Calendar</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">().</span><span class="pln">getTimeInMillis</span><span class="pun">();</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">MediaStore</span><span class="pun">.</span><span class="pln">EXTRA_OUTPUT</span><span class="pun">,</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">fromFile</span><span class="pun">(</span><span class="kwd">new</span> <span class="typ">File</span><span class="pun">(</span><span class="typ">Environment</span>
-<span class="pun">.</span><span class="pln">getExternalStorageDirectory</span><span class="pun">().</span><span class="pln">getAbsolutePath</span><span class="pun">()+</span><span class="str">"/tucue"</span><span class="pun">,</span><span class="pln"> time </span><span class="pun">+</span> <span class="str">".jpg"</span><span class="pun">)));</span><span class="pln">
-startActivityForResult</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">,</span><span class="pln"> ACTIVITY_GET_CAMERA_IMAGE</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//10.获取并剪切图片</span>
-<span class="com">// 获取并剪切图片</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_GET_CONTENT</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"image/*"</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"crop"</span><span class="pun">,</span> <span class="str">"true"</span><span class="pun">);</span> <span class="com">// 开启剪切</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"aspectX"</span><span class="pun">,</span> <span class="lit">1</span><span class="pun">);</span> <span class="com">// 剪切的宽高比为1：2</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"aspectY"</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"outputX"</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">);</span> <span class="com">// 保存图片的宽和高</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"outputY"</span><span class="pun">,</span> <span class="lit">40</span><span class="pun">);</span><span class="pln"> 
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"output"</span><span class="pun">,</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">fromFile</span><span class="pun">(</span><span class="kwd">new</span> <span class="typ">File</span><span class="pun">(</span><span class="str">"/mnt/sdcard/temp"</span><span class="pun">)));</span> <span class="com">// 保存路径</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"outputFormat"</span><span class="pun">,</span> <span class="str">"JPEG"</span><span class="pun">);</span><span class="com">// 返回格式</span><span class="pln">
-startActivityForResult</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">);</span>
-<span class="com">// 剪切特定图片</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="str">"com.android.camera.action.CROP"</span><span class="pun">);</span><span class="pln"> 
-intent</span><span class="pun">.</span><span class="pln">setClassName</span><span class="pun">(</span><span class="str">"com.android.camera"</span><span class="pun">,</span> <span class="str">"com.android.camera.CropImage"</span><span class="pun">);</span><span class="pln"> 
-intent</span><span class="pun">.</span><span class="pln">setData</span><span class="pun">(</span><span class="typ">Uri</span><span class="pun">.</span><span class="pln">fromFile</span><span class="pun">(</span><span class="kwd">new</span> <span class="typ">File</span><span class="pun">(</span><span class="str">"/mnt/sdcard/temp"</span><span class="pun">)));</span><span class="pln"> 
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"outputX"</span><span class="pun">,</span> <span class="lit">1</span><span class="pun">);</span> <span class="com">// 剪切的宽高比为1：2</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"outputY"</span><span class="pun">,</span> <span class="lit">2</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"aspectX"</span><span class="pun">,</span> <span class="lit">20</span><span class="pun">);</span> <span class="com">// 保存图片的宽和高</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"aspectY"</span><span class="pun">,</span> <span class="lit">40</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"scale"</span><span class="pun">,</span> <span class="kwd">true</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"noFaceDetection"</span><span class="pun">,</span> <span class="kwd">true</span><span class="pun">);</span><span class="pln"> 
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"output"</span><span class="pun">,</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"file:///mnt/sdcard/temp"</span><span class="pun">));</span><span class="pln"> 
-startActivityForResult</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//11.打开Google Market </span>
-<span class="com">// 打开Google Market直接进入该程序的详细页面</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="str">"market://details?id="</span> <span class="pun">+</span> <span class="str">"com.demo.app"</span><span class="pun">);</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//12.进入手机设置界面:</span>
-<span class="com">// 进入无线网络设置界面（其它可以举一反三）  </span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Settings</span><span class="pun">.</span><span class="pln">ACTION_WIRELESS_SETTINGS</span><span class="pun">);</span><span class="pln">  
-startActivityForResult</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//13.安装apk:</span>
-<span class="typ">Uri</span><span class="pln"> installUri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">fromParts</span><span class="pun">(</span><span class="str">"package"</span><span class="pun">,</span> <span class="str">"xxx"</span><span class="pun">,</span> <span class="kwd">null</span><span class="pun">);</span><span class="pln">   
-returnIt </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_PACKAGE_ADDED</span><span class="pun">,</span><span class="pln"> installUri</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//14.卸载apk:</span>
-<span class="typ">Uri</span><span class="pln"> uri </span><span class="pun">=</span> <span class="typ">Uri</span><span class="pun">.</span><span class="pln">fromParts</span><span class="pun">(</span><span class="str">"package"</span><span class="pun">,</span><span class="pln"> strPackageName</span><span class="pun">,</span> <span class="kwd">null</span><span class="pun">);</span>      
-<span class="typ">Intent</span><span class="pln"> it </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_DELETE</span><span class="pun">,</span><span class="pln"> uri</span><span class="pun">);</span><span class="pln">      
-startActivity</span><span class="pun">(</span><span class="pln">it</span><span class="pun">);</span> 
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//15.发送附件:</span>
-<span class="typ">Intent</span><span class="pln"> it </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_SEND</span><span class="pun">);</span><span class="pln">      
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_SUBJECT</span><span class="pun">,</span> <span class="str">"The email subject text"</span><span class="pun">);</span><span class="pln">      
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">EXTRA_STREAM</span><span class="pun">,</span> <span class="str">"file:///sdcard/eoe.mp3"</span><span class="pun">);</span><span class="pln">      
-sendIntent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"audio/mp3"</span><span class="pun">);</span><span class="pln">      
-startActivity</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">createChooser</span><span class="pun">(</span><span class="pln">it</span><span class="pun">,</span> <span class="str">"Choose Email Client"</span><span class="pun">));</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//16.进入联系人页面:</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">();</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setAction</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setData</span><span class="pun">(</span><span class="typ">People</span><span class="pun">.</span><span class="pln">CONTENT_URI</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//17.查看指定联系人:</span>
-<span class="typ">Uri</span><span class="pln"> personUri </span><span class="pun">=</span> <span class="typ">ContentUris</span><span class="pun">.</span><span class="pln">withAppendedId</span><span class="pun">(</span><span class="typ">People</span><span class="pun">.</span><span class="pln">CONTENT_URI</span><span class="pun">,</span><span class="pln"> info</span><span class="pun">.</span><span class="pln">id</span><span class="pun">);</span><span class="com">//info.id联系人ID</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">();</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setAction</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_VIEW</span><span class="pun">);</span><span class="pln">
-intent</span><span class="pun">.</span><span class="pln">setData</span><span class="pun">(</span><span class="pln">personUri</span><span class="pun">);</span><span class="pln">
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//18.调用系统编辑添加联系人（高版本SDK有效）：</span>
-<span class="typ">Intent</span><span class="pln"> it </span><span class="pun">=</span><span class="pln"> newIntent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_INSERT_OR_EDIT</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="str">"vnd.android.cursor.item/contact"</span><span class="pun">);</span>    
-<span class="com">//it.setType(Contacts.CONTENT_ITEM_TYPE);    </span><span class="pln">
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="str">"name"</span><span class="pun">,</span><span class="str">"myName"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">COMPANY</span><span class="pun">,</span> <span class="str">"organization"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">EMAIL</span><span class="pun">,</span><span class="str">"email"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">PHONE</span><span class="pun">,</span><span class="str">"homePhone"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">SECONDARY_PHONE</span><span class="pun">,</span><span class="str">"mobilePhone"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">TERTIARY_PHONE</span><span class="pun">,</span><span class="str">"workPhone"</span><span class="pun">);</span><span class="pln">    
-it</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">provider</span><span class="pun">.</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">JOB_TITLE</span><span class="pun">,</span><span class="str">"title"</span><span class="pun">);</span><span class="pln">    
-startActivity</span><span class="pun">(</span><span class="pln">it</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//19.调用系统编辑添加联系人（全有效）：</span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span><span class="pln"> newIntent</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_INSERT_OR_EDIT</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">setType</span><span class="pun">(</span><span class="typ">People</span><span class="pun">.</span><span class="pln">CONTENT_ITEM_TYPE</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">NAME</span><span class="pun">,</span> <span class="str">"My Name"</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">PHONE</span><span class="pun">,</span> <span class="str">"+1234567890"</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">PHONE_TYPE</span><span class="pun">,</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">PhonesColumns</span><span class="pun">.</span><span class="pln">TYPE_MOBILE</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">EMAIL</span><span class="pun">,</span> <span class="str">"com@com.com"</span><span class="pun">);</span><span class="pln">    
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">Contacts</span><span class="pun">.</span><span class="typ">Intents</span><span class="pun">.</span><span class="typ">Insert</span><span class="pun">.</span><span class="pln">EMAIL_TYPE</span><span class="pun">,</span> <span class="typ">Contacts</span><span class="pun">.</span><span class="typ">ContactMethodsColumns</span><span class="pun">.</span><span class="pln">TYPE_WORK</span><span class="pun">);</span><span class="pln">    
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//20.打开另一程序 </span>
-<span class="typ">Intent</span><span class="pln"> i </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">();</span>     
-<span class="typ">ComponentName</span><span class="pln"> cn </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">ComponentName</span><span class="pun">(</span><span class="str">"com.example.jay.test"</span><span class="pun">,</span>     
-<span class="str">"com.example.jay.test.MainActivity"</span><span class="pun">);</span><span class="pln">     
-i</span><span class="pun">.</span><span class="pln">setComponent</span><span class="pun">(</span><span class="pln">cn</span><span class="pun">);</span><span class="pln">     
-i</span><span class="pun">.</span><span class="pln">setAction</span><span class="pun">(</span><span class="str">"android.intent.action.MAIN"</span><span class="pun">);</span><span class="pln">     
-startActivityForResult</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> RESULT_OK</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//21.打开录音机</span>
-<span class="typ">Intent</span><span class="pln"> mi </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">(</span><span class="typ">Media</span><span class="pun">.</span><span class="pln">RECORD_SOUND_ACTION</span><span class="pun">);</span><span class="pln">     
-startActivity</span><span class="pun">(</span><span class="pln">mi</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span>
-
-<span class="com">//22.从google搜索内容 </span>
-<span class="typ">Intent</span><span class="pln"> intent </span><span class="pun">=</span> <span class="kwd">new</span> <span class="typ">Intent</span><span class="pun">();</span><span class="pln">     
-intent</span><span class="pun">.</span><span class="pln">setAction</span><span class="pun">(</span><span class="typ">Intent</span><span class="pun">.</span><span class="pln">ACTION_WEB_SEARCH</span><span class="pun">);</span><span class="pln">     
-intent</span><span class="pun">.</span><span class="pln">putExtra</span><span class="pun">(</span><span class="typ">SearchManager</span><span class="pun">.</span><span class="pln">QUERY</span><span class="pun">,</span><span class="str">"searchString"</span><span class="pun">)</span><span class="pln">     
-startActivity</span><span class="pun">(</span><span class="pln">intent</span><span class="pun">);</span>
-
-<span class="com">//===============================================================</span></pre>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/17/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-10/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -692,7 +383,7 @@ intent.setAction("com.example.raid.service.FIRST_SERVICE");</pre>
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Activity启动模式："><a href="#Activity启动模式：" class="headerlink" title="Activity启动模式："></a>Activity启动模式：</h2><h3 id="Activity的四种加载模式："><a href="#Activity的四种加载模式：" class="headerlink" title="Activity的四种加载模式："></a>Activity的四种加载模式：</h3><p>接下来我们来详细地讲解下四种加载模式： 他们分别是：<strong>standard</strong>(默认)，<strong>singleTop</strong>，<strong>singleTask</strong>，<strong>singleInstance</strong> 在泡在网上的日子看到一篇图文并茂的讲解启动模式的，很赞，可能更容易理解吧，这里借鉴下：</p>
-<p>原文链接：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0520/2897.html" target="_blank" rel="external">Activity启动模式图文详解：standard, singleTop, singleTask 以及 singleInstance</a></p>
+<p>原文链接：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0520/2897.html">Activity启动模式图文详解：standard, singleTop, singleTask 以及 singleInstance</a></p>
 <p>总结：</p>
 <ul>
 <li>按Home键，将之前的Task切换到后台</li>
@@ -702,95 +393,9 @@ intent.setAction("com.example.raid.service.FIRST_SERVICE");</pre>
 <li>启动singleInstance的Activity时，会在系统中搜寻是否已经存在一个这个Activity的实例，如果存在，会将这个实例所在的Task调度到前台，重用这个Activity的实例（该Task中只有这一个Activity），如果不存在，会开启一个新任务，并在这个新Task中启动这个singleInstance模式的Activity的一个实例。<br>&nbsp;</li>
 </ul>
 <p>菜鸟教程中贴上的开源中国Activity管理类，mark~~</p>
-<h3 id="1）开源中国客户端Activity管理类：-项目可以直接复用！！"><a href="#1）开源中国客户端Activity管理类：-项目可以直接复用！！" class="headerlink" title="1）开源中国客户端Activity管理类：(项目可以直接复用！！)"></a>1）开源中国客户端Activity管理类：(项目可以直接复用！！)</h3><pre class="prettyprint prettyprinted"><span class="kwd">package</span><span class="pln"> net</span><span class="pun">.</span><span class="pln">oschina</span><span class="pun">.</span><span class="pln">app</span><span class="pun">;</span>
-
-<span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">Stack</span><span class="pun">;</span>
-
-<span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">app</span><span class="pun">.</span><span class="typ">Activity</span><span class="pun">;</span>
-<span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">app</span><span class="pun">.</span><span class="typ">ActivityManager</span><span class="pun">;</span>
-<span class="kwd">import</span><span class="pln"> android</span><span class="pun">.</span><span class="pln">content</span><span class="pun">.</span><span class="typ">Context</span><span class="pun">;</span>
-
-<span class="kwd">public</span> <span class="kwd">class</span> <span class="typ">AppManager</span> <span class="pun">{</span>
-
-    <span class="kwd">private</span> <span class="kwd">static</span> <span class="typ">Stack</span><span class="pun">&lt;</span><span class="typ">Activity</span><span class="pun">&gt;</span><span class="pln"> activityStack</span><span class="pun">;</span>
-    <span class="kwd">private</span> <span class="kwd">static</span> <span class="typ">AppManager</span><span class="pln"> instance</span><span class="pun">;</span>
-
-    <span class="kwd">private</span> <span class="typ">AppManager</span><span class="pun">(){}</span>
-    <span class="com">/**
-     * 单一实例
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">static</span> <span class="typ">AppManager</span><span class="pln"> getAppManager</span><span class="pun">(){</span>
-        <span class="kwd">if</span><span class="pun">(</span><span class="pln">instance</span><span class="pun">==</span><span class="kwd">null</span><span class="pun">){</span><span class="pln">
-            instance</span><span class="pun">=</span><span class="kwd">new</span> <span class="typ">AppManager</span><span class="pun">();</span>
-        <span class="pun">}</span>
-        <span class="kwd">return</span><span class="pln"> instance</span><span class="pun">;</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 添加Activity到堆栈
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span><span class="pln"> addActivity</span><span class="pun">(</span><span class="typ">Activity</span><span class="pln"> activity</span><span class="pun">){</span>
-        <span class="kwd">if</span><span class="pun">(</span><span class="pln">activityStack</span><span class="pun">==</span><span class="kwd">null</span><span class="pun">){</span><span class="pln">
-            activityStack</span><span class="pun">=</span><span class="kwd">new</span> <span class="typ">Stack</span><span class="pun">&lt;</span><span class="typ">Activity</span><span class="pun">&gt;();</span>
-        <span class="pun">}</span><span class="pln">
-        activityStack</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">);</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 获取当前Activity（堆栈中最后一个压入的）
-     */</span>
-    <span class="kwd">public</span> <span class="typ">Activity</span><span class="pln"> currentActivity</span><span class="pun">(){</span>
-        <span class="typ">Activity</span><span class="pln"> activity</span><span class="pun">=</span><span class="pln">activityStack</span><span class="pun">.</span><span class="pln">lastElement</span><span class="pun">();</span>
-        <span class="kwd">return</span><span class="pln"> activity</span><span class="pun">;</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 结束当前Activity（堆栈中最后一个压入的）
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span><span class="pln"> finishActivity</span><span class="pun">(){</span>
-        <span class="typ">Activity</span><span class="pln"> activity</span><span class="pun">=</span><span class="pln">activityStack</span><span class="pun">.</span><span class="pln">lastElement</span><span class="pun">();</span><span class="pln">
-        finishActivity</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">);</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 结束指定的Activity
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span><span class="pln"> finishActivity</span><span class="pun">(</span><span class="typ">Activity</span><span class="pln"> activity</span><span class="pun">){</span>
-        <span class="kwd">if</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">!=</span><span class="kwd">null</span><span class="pun">){</span><span class="pln">
-            activityStack</span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">);</span><span class="pln">
-            activity</span><span class="pun">.</span><span class="pln">finish</span><span class="pun">();</span><span class="pln">
-            activity</span><span class="pun">=</span><span class="kwd">null</span><span class="pun">;</span>
-        <span class="pun">}</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 结束指定类名的Activity
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span><span class="pln"> finishActivity</span><span class="pun">(</span><span class="typ">Class</span><span class="pun">&lt;?&gt;</span><span class="pln"> cls</span><span class="pun">){</span>
-        <span class="kwd">for</span> <span class="pun">(</span><span class="typ">Activity</span><span class="pln"> activity </span><span class="pun">:</span><span class="pln"> activityStack</span><span class="pun">)</span> <span class="pun">{</span>
-            <span class="kwd">if</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">.</span><span class="pln">getClass</span><span class="pun">().</span><span class="pln">equals</span><span class="pun">(</span><span class="pln">cls</span><span class="pun">)</span> <span class="pun">){</span><span class="pln">
-                finishActivity</span><span class="pun">(</span><span class="pln">activity</span><span class="pun">);</span>
-            <span class="pun">}</span>
-        <span class="pun">}</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 结束所有Activity
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span><span class="pln"> finishAllActivity</span><span class="pun">(){</span>
-        <span class="kwd">for</span> <span class="pun">(</span><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span> <span class="lit">0</span><span class="pun">,</span><span class="pln"> size </span><span class="pun">=</span><span class="pln"> activityStack</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> size</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++){</span>
-            <span class="kwd">if</span> <span class="pun">(</span><span class="kwd">null</span> <span class="pun">!=</span><span class="pln"> activityStack</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">i</span><span class="pun">)){</span><span class="pln">
-                activityStack</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">i</span><span class="pun">).</span><span class="pln">finish</span><span class="pun">();</span>
-            <span class="pun">}</span>
-        <span class="pun">}</span><span class="pln">
-        activityStack</span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();</span>
-    <span class="pun">}</span>
-    <span class="com">/**
-     * 退出应用程序
-     */</span>
-    <span class="kwd">public</span> <span class="kwd">void</span> <span class="typ">AppExit</span><span class="pun">(</span><span class="typ">Context</span><span class="pln"> context</span><span class="pun">)</span> <span class="pun">{</span>
-        <span class="kwd">try</span> <span class="pun">{</span><span class="pln">
-            finishAllActivity</span><span class="pun">();</span>
-            <span class="typ">ActivityManager</span><span class="pln"> activityMgr</span><span class="pun">=</span> <span class="pun">(</span><span class="typ">ActivityManager</span><span class="pun">)</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">getSystemService</span><span class="pun">(</span><span class="typ">Context</span><span class="pun">.</span><span class="pln">ACTIVITY_SERVICE</span><span class="pun">);</span><span class="pln">
-            activityMgr</span><span class="pun">.</span><span class="pln">restartPackage</span><span class="pun">(</span><span class="pln">context</span><span class="pun">.</span><span class="pln">getPackageName</span><span class="pun">());</span>
-            <span class="typ">System</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span>
-        <span class="pun">}</span> <span class="kwd">catch</span> <span class="pun">(</span><span class="typ">Exception</span><span class="pln"> e</span><span class="pun">)</span> <span class="pun">{</span>    <span class="pun">}</span>
-    <span class="pun">}</span>
-<span class="pun">}</span></pre>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/15/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-9/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -844,22 +449,10 @@ intent.setAction("com.example.raid.service.FIRST_SERVICE");</pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="AnsyncTask异步任务"><a href="#AnsyncTask异步任务" class="headerlink" title="AnsyncTask异步任务"></a>AnsyncTask异步任务</h2><h3 id="引入异步任务原因："><a href="#引入异步任务原因：" class="headerlink" title="引入异步任务原因："></a>引入异步任务原因：</h3><p>因为Android程序刚启动时，会同时启动一个对应的主线程(Main Thread)，这个主线程主要负责处理 与UI相关的事件！有时我们也把他称作UI线程！而在Android App时我们必须遵守这个单线程模型的规则：<strong>Android UI操作并不是线程安全的并且这些操作都需要在UI线程中执行！</strong> 假如我们在非UI线程中，比如在主线程中new Thread()另外开辟一个线程，然后直接在里面修改UI控件的值； 此时会抛出下述异常：<strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.view.ViewRoot$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views</strong> 另外，还有一点，如果我们把耗时的操作都放在UI线程中的话，如果UI线程超过5s没有响应用于请求，那么 这个时候会引发ANR(Application Not Responding)异常，就是应用无响应~ 最后还有一点就是：Android 4.0后禁止在UI线程中执行网络操作~不然会报:<strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.os.NetworkOnMainThreadException</strong></p>
-<p>&nbsp;</p>
-<p>AsyncTask 暂时可以满足初学者的需求，谢谢小应用，但是到了公司真正做项目以后，我们更多的使用第三发的 框架，比如Volley,OkHttp,<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>-async-http,XUtils等很多</p>
-<p>&nbsp;</p>
-<p><img src="http://www.runoob.com/wp-content/uploads/2015/07/39584771.jpg" alt=""></p>
-<p><img src="http://www.runoob.com/wp-content/uploads/2015/07/27686655.jpg" alt=""></p>
-<p>&nbsp;</p>
-<p>图片来源：<a href="http://www.runoob.com/w3cnote/android-tutorial-ansynctask.html" target="_blank" rel="external">菜鸟教程</a></p>
-<p>&nbsp;</p>
-<p>注意事项：</p>
-<p><img src="http://www.runoob.com/wp-content/uploads/2015/07/98978225.jpg" alt=""></p>
-<p>&nbsp;</p>
-<p>学习教程来自：菜鸟教程</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
+        <h2 id="AnsyncTask异步任务"><a href="#AnsyncTask异步任务" class="headerlink" title="AnsyncTask异步任务"></a>AnsyncTask异步任务</h2><h3 id="引入异步任务原因："><a href="#引入异步任务原因：" class="headerlink" title="引入异步任务原因："></a>引入异步任务原因：</h3><p>因为Android程序刚启动时，会同时启动一个对应的主线程(Main Thread)，这个主线程主要负责处理 与UI相关的事件！有时我们也把他称作UI线程！而在Android App时我们必须遵守这个单线程模型的规则：<strong>Android UI操作并不是线程安全的并且这些操作都需要在UI线程中执行！</strong> 假如我们在非UI线程中，比如在主线程中new Thread()另外开辟一个线程，然后直接在里面修改UI控件的值； 此时会抛出下述异常：<strong><a href="http://www.alimodern.com/tag/android" title="android">android</a>.view.ViewRoot$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views</strong> 另外，还有一点，如果我们把耗时的操作都放在UI线程中的话，如果UI线程超过5s没有响应用于请求，那么 这个时候会引发ANR(Application Not Responding)异常，就是应用无响应~ 最后还有一点就是：Android 4.0后禁止在UI线程中执行网络操作~不然会报:<strong><a href="http://www.alimodern.com/tag/android" title="android">android</a>.os.NetworkOnMainThreadException</strong><br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-8/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -871,90 +464,6 @@ intent.setAction("com.example.raid.service.FIRST_SERVICE");</pre>
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android笔记/">android笔记</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/">android学习笔记-7</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基于回调的事件处理机制"><a href="#基于回调的事件处理机制" class="headerlink" title="基于回调的事件处理机制:"></a>基于回调的事件处理机制:</h3><p>传播的顺序是: <strong>监听器</strong>—&gt;<strong>view组件的回调方法</strong>—&gt;<strong>Activity的回调方法</strong></p>
-<p>&nbsp;</p>
-<h3 id="Handler消息传递机制："><a href="#Handler消息传递机制：" class="headerlink" title="Handler消息传递机制："></a>Handler消息传递机制：</h3><h4 id="Handler的相关方法"><a href="#Handler的相关方法" class="headerlink" title="Handler的相关方法:"></a>Handler的相关方法:</h4><ul>
-<li>void <strong>handleMessage</strong>(Message msg):处理消息的方法,通常是用于被重写!</li>
-<li><strong>sendEmptyMessage</strong>(int what):发送空消息</li>
-<li><strong>sendEmptyMessageDelayed</strong>(int what,long delayMillis):指定延时多少毫秒后发送空信息</li>
-<li><strong>sendMessage</strong>(Message msg):立即发送信息</li>
-<li><strong>sendMessageDelayed</strong>(Message msg):指定延时多少毫秒后发送信息</li>
-<li>final boolean <strong>hasMessage</strong>(int what):检查消息队列中是否包含what属性为指定值的消息 如果是参数为(int what,Object object):除了判断what属性,还需要判断Object属性是否为指定对象的消息<br>使用方法：</li>
-</ul>
-<p>1、Handler写在主线程中</p>
-<p>在主线程中,因为系统已经初始化了一个Looper对象,所以我们直接创建Handler对象,就可以进行信息的发送与处理了！</p>
-<p>&nbsp;</p>
-<p>2、Handler写在子线程中（就需要自己创建一个Looper对象）</p>
-<p><strong>1 )</strong>直接调用Looper.prepare()方法即可为当前线程创建Looper对象,而它的构造器会创建配套的MessageQueue; <strong>2 )</strong>创建Handler对象,重写handleMessage( )方法就可以处理来自于其他线程的信息了! <strong>3 )</strong>调用Looper.loop()方法启动Looper</p>
-<p>&nbsp;</p>
-<h2 id="响应系统设置的事件-Configuration类"><a href="#响应系统设置的事件-Configuration类" class="headerlink" title="响应系统设置的事件(Configuration类)"></a>响应系统设置的事件(Configuration类)</h2><h3 id="Configuration提供的方法列表"><a href="#Configuration提供的方法列表" class="headerlink" title="Configuration提供的方法列表"></a>Configuration提供的方法列表</h3><ul>
-<li><strong>densityDpi</strong>：屏幕密度</li>
-<li><strong>fontScale</strong>：当前用户设置的字体的缩放因子</li>
-<li><strong>hardKeyboardHidden</strong>：判断硬键盘是否可见，有两个可选值：HARDKEYBOARDHIDDEN_NO,HARDKEYBOARDHIDDEN_YES，分别是十六进制的0和1</li>
-<li><strong>keyboard</strong>：获取当前关联额键盘类型：该属性的返回值：KEYBOARD_12KEY（只有12个键的小键盘）、KEYBOARD_NOKEYS、KEYBOARD_QWERTY（普通键盘）</li>
-<li><strong>keyboardHidden</strong>：该属性返回一个boolean值用于标识当前键盘是否可用。该属性不仅会判断系统的硬件键盘，也会判断系统的软键盘（位于屏幕）。</li>
-<li><strong>locale</strong>：获取用户当前的语言环境</li>
-<li><strong>mcc</strong>：获取移动信号的国家码</li>
-<li><strong>mnc</strong>：获取移动信号的网络码<br>ps:国家代码和网络代码共同确定当前手机网络运营商</li>
-<li><strong>navigation</strong>：判断系统上方向导航设备的类型。该属性的返回值：NAVIGATION_NONAV（无导航）、 NAVIGATION_DPAD(DPAD导航）NAVIGATION_TRACKBALL（轨迹球导航）、NAVIGATION_WHEEL（滚轮导航）</li>
-<li><strong>orientation</strong>：获取系统屏幕的方向。该属性的返回值：ORIENTATION_LANDSCAPE（横向屏幕）、ORIENTATION_PORTRAIT（竖向屏幕）</li>
-<li><strong>screenHeightDp</strong>，<strong>screenWidthDp</strong>：屏幕可用高和宽，用dp表示</li>
-<li><strong>touchscreen</strong>：获取系统触摸屏的触摸方式。该属性的返回值：TOUCHSCREEN_NOTOUCH（无触摸屏）、TOUCHSCREEN_STYLUS（触摸笔式触摸屏）、TOUCHSCREEN_FINGER（接收手指的触摸屏）<br>&nbsp;</li>
-</ul>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/" class="archive-article-date">
-  	<time datetime="2016-02-13T16:01:19.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-14</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
       
@@ -1006,57 +515,10 @@ intent.setAction("com.example.raid.service.FIRST_SERVICE");</pre>
 <p>step4:将这个事件源对象作为参数传给事件监听器</p>
 <p>step5:事件监听对事件对象进行判断执行对应的事件处理器（对应事件的处理方法）</p>
 <p>&nbsp;</p>
-<p>概括：事件监听机制是一种委派式的时间处理机制，事件源（组件）事件处理委托给事件监听器,当事件源发生指定事件时，就通知指定事件监听器，执行相应的操作</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>进行事件监听的方法：</p>
-<p>1、匿名内部类</p>
-<p>如：<br><code>btnshow.setOnClickListener(new OnClickListener() {
-//重写点击事件的处理方法onClick()
-@Override
-public void onClick(View v) {
-//显示Toast信息
-Toast.makeText(getApplicationContext(), &quot;你点击了按钮&quot;, Toast.LENGTH_SHORT).show();
-}
-});</code><br>2、使用内部类</p>
-<p>如：<br><code>//定义一个内部类,实现View.OnClickListener接口,并重写onClick()方法
-class BtnClickListener implements View.OnClickListener
-{
-@Override
-public void onClick(View v) {
-Toast.makeText(getApplicationContext(), &quot;按钮被点击了&quot;, Toast.LENGTH_SHORT).show();
-}
-}</code></p>
-<p>&nbsp;</p>
-<p>3、使用外部类（用得较少）</p>
-<p>&nbsp;</p>
-<p>4、直接使用Activity作为事件监听器<br><code>public class MainActivity extends Activity implements OnClickListener{
-......
-//重写接口中的抽象方法
-@Override
-public void onClick(View v) {
-Toast.makeText(getApplicationContext(), &quot;点击了按钮&quot;, Toast.LENGTH_SHORT).show();
-}
-}</code></p>
-<p>5、直接绑定到标签</p>
-<p>就是直接在xml布局文件中对应得Activity中定义一个事件处理方法 eg:public void myClick(View source) source对应事件源(组件) 接着布局文件中对应要触发事件的组建,设置一个属性:onclick = “myclick”即可<br><code>//自定义一个方法,传入一个view组件作为参数
-public void myclick(View source)
-{
-Toast.makeText(getApplicationContext(), &quot;按钮被点击了&quot;, Toast.LENGTH_SHORT).show();
-}</code></p>
-<p>布局：</p>
-<pre class="prettyprint prettyprinted"><span class="tag">&lt;LinearLayout</span> <span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span>    
-    <span class="atn">xmlns:tools</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/tools"</span>    
-    <span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/LinearLayout1"</span>    
-    <span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"match_parent"</span>    
-    <span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"match_parent"</span>    
-    <span class="atn">android:orientation</span><span class="pun">=</span><span class="atv">"vertical"</span> <span class="tag">&gt;</span>    
-    <span class="tag">&lt;Button</span>     
-        <span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span>    
-        <span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span>    
-        <span class="atn">android:text</span><span class="pun">=</span><span class="atv">"按钮"</span>    
-        <span class="atn">android:onClick</span><span class="pun">=</span><span class="atv">"myclick"</span><span class="tag">/&gt;</span>    
- <span class="tag">&lt;/LinearLayout&gt;</span></pre>
+<p>概括：事件监听机制是一种委派式的时间处理机制，事件源（组件）事件处理委托给事件监听器,当事件源发生指定事件时，就通知指定事件监听器，执行相应的操作<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/13/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-6/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -1068,6 +530,125 @@ Toast.makeText(getApplicationContext(), &quot;按钮被点击了&quot;, Toast.LE
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android笔记/">android笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/10/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-5/">android学习笔记-5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="菜单-Menu"><a href="#菜单-Menu" class="headerlink" title="菜单(Menu)"></a>菜单(Menu)</h2><ul>
+<li><strong>OptionMenu</strong>：选项菜单，<a href="http://www.alimodern.com/tag/android" title="android">android</a>中最常见的菜单，通过Menu键来调用</li>
+<li><strong>SubMenu</strong>：子菜单，<a href="http://www.alimodern.com/tag/android" title="android">android</a>中点击子菜单将弹出一个显示子菜单项的悬浮框， 子菜单不支持嵌套，即不能包括其他子菜单</li>
+<li><strong>ContextMenu</strong>：上下文菜单，通过长按某个视图组件后出现的菜单，该组件需注册上下文菜单 本节我们来依依学习这几种菜单的用法~ PS：官方文档：<a href="http://androiddoc.qiniudn.com/guide/topics/ui/menus.html">menus</a><br>&nbsp;</li>
+</ul>
+<p>&nbsp;<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/10/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-5/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/02/10/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-5/" class="archive-article-date">
+  	<time datetime="2016-02-10T06:31:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-10</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4/">Android学习笔记-4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建一个可以复用的baseadapter"><a href="#创建一个可以复用的baseadapter" class="headerlink" title="创建一个可以复用的baseadapter"></a>创建一个可以复用的baseadapter</h1><p>今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。</p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4/" class="archive-article-date">
+  	<time datetime="2016-02-01T08:48:29.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-01</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
 	</div>
 
       
@@ -1157,7 +738,7 @@ Toast.makeText(getApplicationContext(), &quot;按钮被点击了&quot;, Toast.LE
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

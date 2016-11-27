@@ -6,45 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://addi.club">
-  <title>Android Studio下自定义命名空间出现的问题 | Addi的博客</title>
+  <title>android学习笔记-7 | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。
-后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。
-报错：
-
-
-出现这个问题是因为android studio引入的gradle脚本造成差异。
-在这里引用其他文章中的一段话
-
-在eclipse中如果要使用">
+  <meta name="description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio下自定义命名空间出现的问题">
-<meta property="og:url" content="http://addi.club/2016/03/11/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/index.html">
+<meta property="og:title" content="android学习笔记-7">
+<meta property="og:url" content="http://addi.club/2016/11/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/index.html">
 <meta property="og:site_name" content="Addi的博客">
-<meta property="og:description" content="今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。
-后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。
-报错：
-
-
-出现这个问题是因为android studio引入的gradle脚本造成差异。
-在这里引用其他文章中的一段话
-
-在eclipse中如果要使用">
-<meta property="og:image" content="http://source.alimodern.com/wp-content/uploads/2016/03/1.png">
-<meta property="og:image" content="http://source.alimodern.com/wp-content/uploads/2016/03/2.png">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+<meta property="og:description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
+<meta property="og:updated_time" content="2016-11-27T07:46:42.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio下自定义命名空间出现的问题">
-<meta name="twitter:description" content="今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。
-后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。
-报错：
-
-
-出现这个问题是因为android studio引入的gradle脚本造成差异。
-在这里引用其他文章中的一段话
-
-在eclipse中如果要使用">
-<meta name="twitter:image" content="http://source.alimodern.com/wp-content/uploads/2016/03/1.png">
+<meta name="twitter:title" content="android学习笔记-7">
+<meta name="twitter:description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -168,7 +156,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -178,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android Studio下自定义命名空间出现的问题
+      android学习笔记-7
     </h1>
   
 
@@ -186,39 +174,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。</p>
-<p>后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。</p>
-<p>报错：</p>
-<p><img src="http://source.alimodern.com/wp-content/uploads/2016/03/1.png" alt="错误"></p>
-<hr>
-<p>出现这个问题是因为<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a> studio引入的gradle脚本造成差异。</p>
-<p>在这里引用其他文章中的一段话</p>
-<blockquote>
-<p>在eclipse中如果要使用你自定义的属性 是不能用res-auto的 必须得替换成你自定义view所属的包名，如果你在恰好使用的自定义属性被做成了lib 那就只能使用res-auto了，而在<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>-studio里，无论你是自己写自定义view 还是引用的lib里的自定义的view 都只能使用res-auto这个写法。以前那个包名的写法 在<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>-studio里是被废弃无法使用的。<br>所以得写成这样：</p>
-</blockquote>
-<p><img src="http://source.alimodern.com/wp-content/uploads/2016/03/2.png" alt="正确"></p>
-<p>Mark~</p>
-<p>3/11/2016 9:36:12 PM</p>
+        <h3 id="基于回调的事件处理机制"><a href="#基于回调的事件处理机制" class="headerlink" title="基于回调的事件处理机制:"></a>基于回调的事件处理机制:</h3><p>传播的顺序是: <strong>监听器</strong>—&gt;<strong>view组件的回调方法</strong>—&gt;<strong>Activity的回调方法</strong></p>
+<p>&nbsp;</p>
+<h3 id="Handler消息传递机制："><a href="#Handler消息传递机制：" class="headerlink" title="Handler消息传递机制："></a>Handler消息传递机制：</h3><h4 id="Handler的相关方法"><a href="#Handler的相关方法" class="headerlink" title="Handler的相关方法:"></a>Handler的相关方法:</h4><ul>
+<li>void <strong>handleMessage</strong>(Message msg):处理消息的方法,通常是用于被重写!</li>
+<li><strong>sendEmptyMessage</strong>(int what):发送空消息</li>
+<li><strong>sendEmptyMessageDelayed</strong>(int what,long delayMillis):指定延时多少毫秒后发送空信息</li>
+<li><strong>sendMessage</strong>(Message msg):立即发送信息</li>
+<li><strong>sendMessageDelayed</strong>(Message msg):指定延时多少毫秒后发送信息</li>
+<li>final boolean <strong>hasMessage</strong>(int what):检查消息队列中是否包含what属性为指定值的消息 如果是参数为(int what,Object object):除了判断what属性,还需要判断Object属性是否为指定对象的消息。</li>
+</ul>
+<a id="more"></a>
+<p>使用方法：</p>
+<p>1、Handler写在主线程中</p>
+<p>在主线程中,因为系统已经初始化了一个Looper对象,所以我们直接创建Handler对象,就可以进行信息的发送与处理了！</p>
+<p>&nbsp;</p>
+<p>2、Handler写在子线程中（就需要自己创建一个Looper对象）</p>
+<p><strong>1 )</strong>直接调用Looper.prepare()方法即可为当前线程创建Looper对象,而它的构造器会创建配套的MessageQueue; <strong>2 )</strong>创建Handler对象,重写handleMessage( )方法就可以处理来自于其他线程的信息了! <strong>3 )</strong>调用Looper.loop()方法启动Looper</p>
+<p>&nbsp;</p>
+<h2 id="响应系统设置的事件-Configuration类"><a href="#响应系统设置的事件-Configuration类" class="headerlink" title="响应系统设置的事件(Configuration类)"></a>响应系统设置的事件(Configuration类)</h2><h3 id="Configuration提供的方法列表"><a href="#Configuration提供的方法列表" class="headerlink" title="Configuration提供的方法列表"></a>Configuration提供的方法列表</h3><ul>
+<li><strong>densityDpi</strong>：屏幕密度</li>
+<li><strong>fontScale</strong>：当前用户设置的字体的缩放因子</li>
+<li><strong>hardKeyboardHidden</strong>：判断硬键盘是否可见，有两个可选值：HARDKEYBOARDHIDDEN_NO,HARDKEYBOARDHIDDEN_YES，分别是十六进制的0和1</li>
+<li><strong>keyboard</strong>：获取当前关联额键盘类型：该属性的返回值：KEYBOARD_12KEY（只有12个键的小键盘）、KEYBOARD_NOKEYS、KEYBOARD_QWERTY（普通键盘）</li>
+<li><strong>keyboardHidden</strong>：该属性返回一个boolean值用于标识当前键盘是否可用。该属性不仅会判断系统的硬件键盘，也会判断系统的软键盘（位于屏幕）。</li>
+<li><strong>locale</strong>：获取用户当前的语言环境</li>
+<li><strong>mcc</strong>：获取移动信号的国家码</li>
+<li><strong>mnc</strong>：获取移动信号的网络码<br>ps:国家代码和网络代码共同确定当前手机网络运营商</li>
+<li><strong>navigation</strong>：判断系统上方向导航设备的类型。该属性的返回值：NAVIGATION_NONAV（无导航）、 NAVIGATION_DPAD(DPAD导航）NAVIGATION_TRACKBALL（轨迹球导航）、NAVIGATION_WHEEL（滚轮导航）</li>
+<li><strong>orientation</strong>：获取系统屏幕的方向。该属性的返回值：ORIENTATION_LANDSCAPE（横向屏幕）、ORIENTATION_PORTRAIT（竖向屏幕）</li>
+<li><strong>screenHeightDp</strong>，<strong>screenWidthDp</strong>：屏幕可用高和宽，用dp表示</li>
+<li><strong>touchscreen</strong>：获取系统触摸屏的触摸方式。该属性的返回值：TOUCHSCREEN_NOTOUCH（无触摸屏）、TOUCHSCREEN_STYLUS（触摸笔式触摸屏）、TOUCHSCREEN_FINGER（接收手指的触摸屏）<br>&nbsp;</li>
+</ul>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/03/11/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/" class="archive-article-date">
-  	<time datetime="2016-03-11T13:42:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-11</time>
+      <a href="/2016/11/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/" class="archive-article-date">
+  	<time datetime="2016-11-27T07:15:19.235Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-27</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
 
       <div class="clearfix"></div>
     </div>
@@ -228,18 +230,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/03/13/e5-ad-a6-e4-b9-a0android-e5-bc-82-e6-ad-a5-e4-bb-bb-e5-8a-a1-asynctask/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/27/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          学习Android异步任务-AsyncTask
+          Android Studio下自定义命名空间出现的问题
         
       </div>
     </a>
   
   
-    <a href="/2016/03/02/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-13/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android学习笔记-13</div>
+    <a href="/2016/11/27/2016-11-27的碎碎念/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2016-11-27的碎碎念</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +334,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

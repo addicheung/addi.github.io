@@ -10,36 +10,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Adapter:Adapter继承结构：
 
-&amp;nbsp;
-常用adapter:
-BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
-ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
-SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
-SimpleCursorAdapt">
+&amp;nbsp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习笔记-3">
 <meta property="og:url" content="http://addi.club/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-3/index.html">
 <meta property="og:site_name" content="Addi的博客">
 <meta property="og:description" content="Adapter:Adapter继承结构：
 
-&amp;nbsp;
-常用adapter:
-BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
-ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
-SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
-SimpleCursorAdapt">
+&amp;nbsp;">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.245Z">
+<meta property="og:updated_time" content="2016-11-27T07:44:18.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习笔记-3">
 <meta name="twitter:description" content="Adapter:Adapter继承结构：
 
-&amp;nbsp;
-常用adapter:
-BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
-ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
-SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
-SimpleCursorAdapt">
+&amp;nbsp;">
 <meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
@@ -185,6 +170,7 @@ SimpleCursorAdapt">
         <h1 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter:"></a>Adapter:</h1><p>Adapter继承结构：</p>
 <p><img src="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg" alt=""></p>
 <p>&nbsp;</p>
+<a id="more"></a>
 <h2 id="常用adapter"><a href="#常用adapter" class="headerlink" title="常用adapter:"></a><strong>常用adapter:</strong></h2><ul>
 <li><strong>BaseAdapter</strong>：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！</li>
 <li><strong>ArrayAdapter</strong>：支持泛型操作，最简单的一个Adapter，只能展现一行文字~</li>
@@ -209,14 +195,22 @@ SimpleCursorAdapt">
 <pre class="prettyprint prettyprinted"><span class="com">//添加表头和表尾需要写在setAdapter方法调用之前！！！</span><span class="pln">
         list_animal</span><span class="pun">.</span><span class="pln">addHeaderView</span><span class="pun">(</span><span class="pln">headView</span><span class="pun">);</span><span class="pln">
         list_animal</span><span class="pun">.</span><span class="pln">addFooterView</span><span class="pun">(</span><span class="pln">footView</span><span class="pun">);
-
+</span></pre>
 添加表头表尾后，我们发现positon是从表头开始算的，就是你添加的第一个数据本来的postion是 0，但是此时却变成了1，因为表头也算！！
 
-</span></pre>
 
-<h2 id="BaseAdapter优化："><a href="#BaseAdapter优化：" class="headerlink" title="BaseAdapter优化："></a>BaseAdapter优化：</h2><h2 id="1-复用ConvertView："><a href="#1-复用ConvertView：" class="headerlink" title="1.复用ConvertView："></a>1.复用ConvertView：</h2><p>inflate()每次都要加载一次xml，其实这个convertView是系统提供给我们的可供服用的View 的缓存对象，那就先判断view是否为空，为空才加载</p>
-<p>&nbsp;</p>
-<h2 id="2-ViewHolder重用组件："><a href="#2-ViewHolder重用组件：" class="headerlink" title="2.ViewHolder重用组件："></a>2.ViewHolder重用组件：</h2><pre class="prettyprint prettyprinted"><span class="kwd">static</span> <span class="kwd">class</span> <span class="typ">ViewHolder</span><span class="pun">{</span>
+
+## BaseAdapter优化：
+
+## 1.复用ConvertView：
+
+inflate()每次都要加载一次xml，其实这个convertView是系统提供给我们的可供服用的View 的缓存对象，那就先判断view是否为空，为空才加载
+
+&nbsp;
+
+## 2.ViewHolder重用组件：
+
+<pre class="prettyprint prettyprinted"><span class="kwd">static</span> <span class="kwd">class</span> <span class="typ">ViewHolder</span><span class="pun">{</span>
   具体view中的控件例如
   TextView XXX;
 <span class="pun">}
@@ -239,14 +233,14 @@ SimpleCursorAdapt">
 > 
 >    <span style="color: #ff0000;"> holder = (ViewHolder)convertView.getTag();</span>
 > 
-> <span style="color: #ff0000;">}</span></pre>
+> <span style="color: #ff0000;">}</span>
 > 
-> <pre><span style="color: #ff0000;">holder</span>.t1.setText(mData.get(position).getName());
+><span style="color: #ff0000;">holder</span>.t1.setText(mData.get(position).getName());
 > 
-> <span style="color: #ff0000;">holder</span>.t2.setText(mData.get(position).getAlbum());</pre>
+> <span style="color: #ff0000;">holder</span>.t2.setText(mData.get(position).getAlbum());
 > 
-> <pre>return convertView;</pre>
-<pre class="prettyprint prettyprinted"><span class="pun"> </span></pre>
+> return convertView;</pre>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -374,7 +368,7 @@ SimpleCursorAdapt">
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

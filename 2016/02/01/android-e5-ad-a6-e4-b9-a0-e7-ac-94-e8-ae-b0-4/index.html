@@ -8,28 +8,16 @@
   <link rel="dns-prefetch" href="http://addi.club">
   <title>Android学习笔记-4 | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。
-1：将Entity设置成泛型所以首先将累设计成泛型的
-如：
-public class MyAdapter&amp;lt;T&amp;gt; extends BaseAdapter{
-private Context mContext">
+  <meta name="description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习笔记-4">
 <meta property="og:url" content="http://addi.club/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4/index.html">
 <meta property="og:site_name" content="Addi的博客">
-<meta property="og:description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。
-1：将Entity设置成泛型所以首先将累设计成泛型的
-如：
-public class MyAdapter&amp;lt;T&amp;gt; extends BaseAdapter{
-private Context mContext">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.245Z">
+<meta property="og:description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。">
+<meta property="og:updated_time" content="2016-11-27T07:45:24.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习笔记-4">
-<meta name="twitter:description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。
-1：将Entity设置成泛型所以首先将累设计成泛型的
-如：
-public class MyAdapter&amp;lt;T&amp;gt; extends BaseAdapter{
-private Context mContext">
+<meta name="twitter:description" content="创建一个可以复用的baseadapter今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -172,12 +160,17 @@ private Context mContext">
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="创建一个可以复用的baseadapter"><a href="#创建一个可以复用的baseadapter" class="headerlink" title="创建一个可以复用的baseadapter"></a>创建一个可以复用的baseadapter</h1><p>今天学习了baseadapter,教程里面有教如何创建一个可以复用的baseadapter，程序员总是喜欢偷懒的啦，自己也依据教程动手写了一下。</p>
+<a id="more"></a>
 <h2 id="1：将Entity设置成泛型"><a href="#1：将Entity设置成泛型" class="headerlink" title="1：将Entity设置成泛型"></a>1：将Entity设置成泛型</h2><p>所以首先将累设计成泛型的</p>
 <p>如：</p>
-<p><span class="pln">public class <span style="color: #ff0000;">MyAdapter</span></span><span class="tag" style="color: #ff0000;">&lt;T&gt;</span><span class="pln"> extends BaseAdapter{</span></p>
-<p><span class="pln"><br></span><span class="pln">private Context mContext; </span></p>
-<p><span class="pln">private <span style="color: #ff0000;">LinkedList</span></span><span class="tag" style="color: #ff0000;">&lt;T&gt;</span><span class="pln"> mData;</span></p>
-<pre class="prettyprint prettyprinted"><span class="pln">public MyAdapter() {
+<pre class="prettyprint prettyprinted">
+<span class="pln">public class <span style="color: #ff0000;">MyAdapter</span></span><span class="tag" style="color: #ff0000;">&lt;T&gt;</span><span class="pln"> extends BaseAdapter{</span>
+
+<span class="pln">
+</span><span class="pln">private Context mContext; </span>
+
+<span class="pln">private <span style="color: #ff0000;">LinkedList</span></span><span class="tag" style="color: #ff0000;">&lt;T&gt;</span><span class="pln"> mData;</span>
+<span class="pln">public MyAdapter() {
     }
 
     public MyAdapter(<span style="color: #ff0000;">LinkedList</span></span><span class="tag" style="color: #ff0000;">&lt;T&gt;</span><span class="pln"> mData, Context mContext) {
@@ -191,9 +184,10 @@ private Context mContext">
 *   定义一个查找控件的方法，思路是通过暴露公共的方法，调用方法时传递过来 控件id，以及设置的内容，比如TextView设置文本： public ViewHolder setText(int id, CharSequence text){文本设置}
 *   将convertView复用部分搬到这里，那就需要传递一个context对象了，我们把需要获取 的部分都写到构造方法中！
 *   写一堆设置方法(public)，比如设置文字大小颜色，图片背景等！
-<pre class="prettyprint prettyprinted"></pre>
 
-<h2 id="3：定义一个抽象方法，完成ViewHolder与Data数据集的绑定"><a href="#3：定义一个抽象方法，完成ViewHolder与Data数据集的绑定" class="headerlink" title="3：定义一个抽象方法，完成ViewHolder与Data数据集的绑定"></a>3：定义一个抽象方法，完成ViewHolder与Data数据集的绑定</h2><pre class="prettyprint prettyprinted"><span class="kwd">public</span> <span class="kwd">abstract</span> <span class="kwd">void</span><span class="pln"> bindView</span><span class="pun">(</span><span class="typ">ViewHolder</span><span class="pln"> holder</span><span class="pun">,</span><span class="pln"> T obj</span><span class="pun">);
+## 3：定义一个抽象方法，完成ViewHolder与Data数据集的绑定
+
+<pre class="prettyprint prettyprinted"><span class="kwd">public</span> <span class="kwd">abstract</span> <span class="kwd">void</span><span class="pln"> bindView</span><span class="pun">(</span><span class="typ">ViewHolder</span><span class="pln"> holder</span><span class="pun">,</span><span class="pln"> T obj</span><span class="pun">);
 
 </span></pre>
 
@@ -532,7 +526,7 @@ public abstract class MyBaseAdapter<t> extends BaseAdapter {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

@@ -8,22 +8,16 @@
   <link rel="dns-prefetch" href="http://addi.club">
   <title>Android学习笔记-10 | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！
-&amp;nbsp;
-常用Intent:(mark)">
+  <meta name="description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习笔记-10">
 <meta property="og:url" content="http://addi.club/2016/02/17/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-10/index.html">
 <meta property="og:site_name" content="Addi的博客">
-<meta property="og:description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！
-&amp;nbsp;
-常用Intent:(mark)">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+<meta property="og:description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！">
+<meta property="og:updated_time" content="2016-11-27T07:47:30.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习笔记-10">
-<meta name="twitter:description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！
-&amp;nbsp;
-常用Intent:(mark)">
+<meta name="twitter:description" content="BroadcastReceiver使用注意事项：不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -166,6 +160,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="BroadcastReceiver使用注意事项："><a href="#BroadcastReceiver使用注意事项：" class="headerlink" title="BroadcastReceiver使用注意事项："></a>BroadcastReceiver使用注意事项：</h3><p>不要在广播里添加过多逻辑或者进行任何耗时操作,因为在广播中是不允许开辟线程的, 当onReceiver( )方法运行较长时间(超过10秒)还没有结束的话,那么程序会报错(ANR), 广播更多的时候扮演的是一个打开其他组件的角色,比如启动Service,Notification提示, Activity等！</p>
+<a id="more"></a>
 <p>&nbsp;</p>
 <p>常用Intent:(mark)</p>
 <pre class="prettyprint prettyprinted"><span class="com">//===============================================================</span>
@@ -539,7 +534,7 @@ startActivity</span><span class="pun">(</span><span class="pln">intent</span><sp
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

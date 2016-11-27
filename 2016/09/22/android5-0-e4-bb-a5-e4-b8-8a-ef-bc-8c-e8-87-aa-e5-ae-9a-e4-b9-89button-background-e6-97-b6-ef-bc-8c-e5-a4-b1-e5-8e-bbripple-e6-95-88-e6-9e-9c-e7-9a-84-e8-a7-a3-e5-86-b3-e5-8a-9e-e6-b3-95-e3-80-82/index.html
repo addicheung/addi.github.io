@@ -17,10 +17,7 @@ android:background=&quot;@color/btn_color&quot;
 又如果是这样：
 android:background=&quot;@drawable/btn_selector&quot;
 
-这时候，自定义了一个selector
-
-如下：
-&amp;lt;">
+这时候，自定义了一个selector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android5.0以上，自定义Button Background时，失去Ripple效果的解决办法。">
 <meta property="og:url" content="http://addi.club/2016/09/22/android5-0-e4-bb-a5-e4-b8-8a-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89button-background-e6-97-b6-ef-bc-8c-e5-a4-b1-e5-8e-bbripple-e6-95-88-e6-9e-9c-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95-e3-80-82/index.html">
@@ -34,11 +31,8 @@ android:background=&quot;@color/btn_color&quot;
 又如果是这样：
 android:background=&quot;@drawable/btn_selector&quot;
 
-这时候，自定义了一个selector
-
-如下：
-&amp;lt;">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.254Z">
+这时候，自定义了一个selector">
+<meta property="og:updated_time" content="2016-11-27T07:37:57.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android5.0以上，自定义Button Background时，失去Ripple效果的解决办法。">
 <meta name="twitter:description" content="今天发现，如果自定义Button的Background时
@@ -50,10 +44,7 @@ android:background=&quot;@color/btn_color&quot;
 又如果是这样：
 android:background=&quot;@drawable/btn_selector&quot;
 
-这时候，自定义了一个selector
-
-如下：
-&amp;lt;">
+这时候，自定义了一个selector">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -203,22 +194,22 @@ android:background=&quot;@drawable/btn_selector&quot;
 
 又如果是这样：</pre>
 <pre>android:background="@drawable/btn_selector"
-
+</pre>
 这时候，自定义了一个selector
 
-如下：</pre>
+<a id="more"></a>
+
+如下：
 <pre>&lt;selector  xmlns:android="http://schemas.android.com/apk/res/android"&gt;
     &lt;item android:state_enabled="true" android:drawable="@color/colorPrimary"/&gt;
     &lt;item android:state_pressed="true" android:drawable="@color/colorPrimaryDark"/&gt;
 &lt;/selector&gt;
+</pre>
 
-分别定义了，默认按钮颜色，和按压的时候的颜色。这样也会没有Ripple效果。
-
-那么怎样才行呢？
-
-这时候需要在drawable-v21下新建同一份文件btn_selector.xml
-
-内容如下：</pre>
+<p>分别定义了，默认按钮颜色，和按压的时候的颜色。这样也会没有Ripple效果。</p>
+<p>那么怎样才行呢？</p>
+<p>这时候需要在drawable-v21下新建同一份文件btn_selector.xml</p>
+<p>内容如下：</p>
 <pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/colorPrimaryDark"&gt;//这里是扩散水波纹的色值
@@ -226,9 +217,7 @@ android:background=&quot;@drawable/btn_selector&quot;
 &lt;/ripple&gt;
 
 根标签为ripple ，这个是自定义的ripple颜色效果。所以，需要这样才能显示ripple.</pre>
-<pre>
 
-</pre>
       
     </div>
     <div class="article-info article-info-index">
@@ -237,6 +226,11 @@ android:background=&quot;@drawable/btn_selector&quot;
   	<time datetime="2016-09-22T11:30:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-22</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -252,11 +246,11 @@ android:background=&quot;@drawable/btn_selector&quot;
   
 <nav id="article-nav">
   
-    <a href="/2016/11/26/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/27/2016-11-27的碎碎念/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hello World
+          2016-11-27的碎碎念
         
       </div>
     </a>
@@ -356,7 +350,7 @@ android:background=&quot;@drawable/btn_selector&quot;
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

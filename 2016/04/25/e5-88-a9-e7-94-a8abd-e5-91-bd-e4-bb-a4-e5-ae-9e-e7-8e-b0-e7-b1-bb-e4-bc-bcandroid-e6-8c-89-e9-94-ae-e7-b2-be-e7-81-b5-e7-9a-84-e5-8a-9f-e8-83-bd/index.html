@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://addi.club/2016/04/25/e5-88-a9-e7-94-a8abd-e5-91-bd-e4-bb-a4-e5-ae-9e-e7-8e-b0-e7-b1-bb-e4-bc-bcandroid-e6-8c-89-e9-94-ae-e7-b2-be-e7-81-b5-e7-9a-84-e5-8a-9f-e8-83-bd/index.html">
 <meta property="og:site_name" content="Addi的博客">
 <meta property="og:description" content="一天过得真TM快，今天啥事没干到，就帮朋友圈做了个小应用… 朋友说他想要一个自动滑动屏幕的应用，虽然不知道他想用来干啥（我也没问），想着可以练练手 于是没多想就答应了，然后开始google一些解决方案，我首先想到的是可不可以使用模拟一些触摸事件的方法呢， 于是就Google到一个Android的单元测试框架，叫做Instrumentation，使用个框架可以模拟一些系统事件 例如KeyDown，K">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.253Z">
+<meta property="og:updated_time" content="2016-11-27T07:49:59.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用ABD命令实现类似Android按键精灵的功能">
 <meta name="twitter:description" content="一天过得真TM快，今天啥事没干到，就帮朋友圈做了个小应用… 朋友说他想要一个自动滑动屏幕的应用，虽然不知道他想用来干啥（我也没问），想着可以练练手 于是没多想就答应了，然后开始google一些解决方案，我首先想到的是可不可以使用模拟一些触摸事件的方法呢， 于是就Google到一个Android的单元测试框架，叫做Instrumentation，使用个框架可以模拟一些系统事件 例如KeyDown，K">
@@ -160,20 +160,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>一天过得真TM快，今天啥事没干到，就帮朋友圈做了个小应用… 朋友说他想要一个自动滑动屏幕的应用，虽然不知道他想用来干啥（我也没问），想着可以练练手 于是没多想就答应了，然后开始google一些解决方案，我首先想到的是可不可以使用模拟一些触摸事件的方法呢， 于是就Google到一个Android的单元测试框架，叫做Instrumentation，使用个框架可以模拟一些系统事件 例如KeyDown，KeyUp什么的，还有就是Move事件，详细见官方文档： 于是我写了下面一段代码：</p>
-<pre><code>    Instrumentation instrumentation  = new Instrumentation();
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_DOWN,200,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,300,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,500,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,600,300,0));
+<pre><code>  Instrumentation instrumentation  = new Instrumentation();
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_DOWN,200,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,300,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,500,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,600,300,0));
 
-  `&lt;/pre&gt;
-
-这段代码可以成功的模拟触摸滑动事件，但是将应用切换后台之后，就不能用了，我想实现的是这个应用启动一个service
-然后就可以控制系统全局应用的滑动。这个方法不能解决我的问题
-
-然后怎么办呢，然后我就到stackoverflow上看看大神的回答，然后看到有人回答说可以尝试用adb命令进行模拟 然后我写了下面的代码：
-
-/* Created by AddiCheung on 2016/4/24 0024\. */ public class MoveService extends Service {
+`&lt;/pre&gt;
+</code></pre><p>   这段代码可以成功的模拟触摸滑动事件，但是将应用切换后台之后，就不能用了，我想实现的是这个应用启动一个service<br>   然后就可以控制系统全局应用的滑动。这个方法不能解决我的问题<br><a id="more"></a><br>   然后怎么办呢，然后我就到stackoverflow上看看大神的回答，然后看到有人回答说可以尝试用adb命令进行模拟 然后我写了下面的代码：</p>
+<pre><code>/* Created by AddiCheung on 2016/4/24 0024\. */ public class MoveService extends Service {
 
 &lt;pre class=&quot;para-block pre-indented&quot;&gt;`private OutputStream os;
 private int width;
@@ -253,10 +248,8 @@ public void onDestroy() {
     super.onDestroy();
 }
 }`&lt;/pre&gt;
-
-这是整个小应用的核心，是一个service重点看线程run方法中的代码：
-
-&lt;pre class=&quot;para-block pre-indented&quot;&gt;`public void run() {
+</code></pre><p>  这是整个小应用的核心，是一个service重点看线程run方法中的代码：</p>
+<pre><code>&lt;pre class=&quot;para-block pre-indented&quot;&gt;`public void run() {
             //屏幕滑动adb命令
             String cmdRight = &quot;input swipe &quot;+20+&quot; &quot;+height/2+&quot; &quot;+(width-20)+&quot; &quot;+height/2+&quot;\n&quot;;
             String cmdLeft = &quot;input swipe &quot;+(width-20)+&quot; &quot;+height/2+&quot; &quot;+20+&quot; &quot;+height/2+&quot;\n&quot;;
@@ -412,7 +405,7 @@ public void onDestroy() {
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

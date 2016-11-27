@@ -8,29 +8,17 @@
   <link rel="dns-prefetch" href="http://addi.club">
   <title>Android 5.0 Button 按钮水纹效果的适配问题-解决自定义button颜色时水波纹的显示 | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图
-
-以Button举例可以按照如下使用:注意是android:theme
-&amp;lt;span class=&amp;quot;hljs-tag&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;span class=&amp;quot;hljs-title&amp;quot;&amp;gt;Button&amp;lt;/span&amp;gt;  
-    &amp;lt;span class=&amp;quot;">
+  <meta name="description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 5.0 Button 按钮水纹效果的适配问题-解决自定义button颜色时水波纹的显示">
 <meta property="og:url" content="http://addi.club/2016/09/22/android-5-0-button-e6-8c-89-e9-92-ae-e6-b0-b4-e7-ba-b9-e6-95-88-e6-9e-9c-e7-9a-84-e9-80-82-e9-85-8d-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e8-87-aa-e5-ae-9a-e4-b9-89button-e9-a2-9c-e8-89-b2-e6-97-b6/index.html">
 <meta property="og:site_name" content="Addi的博客">
-<meta property="og:description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图
-
-以Button举例可以按照如下使用:注意是android:theme
-&amp;lt;span class=&amp;quot;hljs-tag&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;span class=&amp;quot;hljs-title&amp;quot;&amp;gt;Button&amp;lt;/span&amp;gt;  
-    &amp;lt;span class=&amp;quot;">
+<meta property="og:description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图">
 <meta property="og:image" content="http://img.blog.csdn.net/20160324165721725">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+<meta property="og:updated_time" content="2016-11-27T07:36:45.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 5.0 Button 按钮水纹效果的适配问题-解决自定义button颜色时水波纹的显示">
-<meta name="twitter:description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图
-
-以Button举例可以按照如下使用:注意是android:theme
-&amp;lt;span class=&amp;quot;hljs-tag&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;span class=&amp;quot;hljs-title&amp;quot;&amp;gt;Button&amp;lt;/span&amp;gt;  
-    &amp;lt;span class=&amp;quot;">
+<meta name="twitter:description" content="从5.0开始,一些控件的点击时候默认是有水纹效果的如下图">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160324165721725">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
@@ -174,126 +162,64 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>从5.0开始,一些控件的点击时候默认是有水纹效果的如下图</p>
-<p><img src="http://img.blog.csdn.net/20160324165721725" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20160324165721725" alt="这里写图片描述">  </p>
+<a id="more"></a>
 <p>以Button举例可以按照如下使用:<br>注意是<strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:theme</strong></p>
 <pre><code>&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;Button&lt;/span&gt;  
     &lt;span class=&quot;hljs-attribute&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
     &lt;span class=&quot;hljs-attribute&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
     &lt;span class=&quot;hljs-attribute&quot;&gt;android:text&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;Button&quot;&lt;/span&gt;
     &lt;span class=&quot;hljs-attribute&quot;&gt;android:theme&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@style/MyButton&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;`&lt;/pre&gt;
-</code></pre><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li><p>5<br>自定义样式:</p>
-<pre class="prettyprint">`&lt;style <span class="hljs-property">name</span>=<span class="hljs-string">"MyButton"</span> parent=<span class="hljs-string">"Theme.AppCompat.Light"</span>&gt;  
-    &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"colorControlHighlight"</span>&gt;@color/indigo&lt;/<span class="hljs-property">item</span>&gt;
-    &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"colorButtonNormal"</span>&gt;@color/pink&lt;/<span class="hljs-property">item</span>&gt;
-&lt;/style&gt;  `</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li><p>4<br>但是这样在5.0以下的系统,这样就没有效果,按钮会变成默认的灰色状态,点击按钮也不会有颜色的状态区别<br>为了兼容5.0以下的设备,我们可以利用seletor(<strong>勘误:button用theme在5.0以下也是有按压变色的,虽然没有水波纹,下面的方法仍然适用其他控件的适配</strong>)</p>
-<pre class="prettyprint">` &lt;Button
-                android:id=<span class="hljs-string">"<span class="hljs-variable">@+</span>id/confirm"</span>
-                style=<span class="hljs-string">"<span class="hljs-variable">@style</span>/GreenButton"</span>
-                android:text=<span class="hljs-string">"<span class="hljs-variable">@string</span>/confirm"</span> /&gt;`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li><p>4</p>
-<pre class="prettyprint">`  &lt;style <span class="hljs-property">name</span>=<span class="hljs-string">"GreenButton"</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:layout_width"</span>&gt;match_parent&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:layout_height"</span>&gt;@dimen/button_height_tall&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:background"</span>&gt;@drawable/selector_green_button&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:textColor"</span>&gt;@color/white&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:textSize"</span>&gt;@dimen/font_large&lt;/<span class="hljs-property">item</span>&gt;
-    &lt;/style&gt;`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7<br>我们可以在drawable和drawable-v21下新建同一份文件selector_green_button.xml</p>
-<pre class="prettyprint">`<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">selector</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>&gt;</span>
+</code></pre><p>   自定义样式:<br>    <pre class="prettyprint"><code>&amp;lt;style &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;MyButton&quot;&lt;/span&gt; parent=&lt;span class=&quot;hljs-string&quot;&gt;&quot;Theme.AppCompat.Light&quot;&lt;/span&gt;&amp;gt;  
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;colorControlHighlight&quot;&lt;/span&gt;&amp;gt;@color/indigo&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;colorButtonNormal&quot;&lt;/span&gt;&amp;gt;@color/pink&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+    &amp;lt;/style&amp;gt;</code></pre></p>
+<p>   但是这样在5.0以下的系统,这样就没有效果,按钮会变成默认的灰色状态,点击按钮也不会有颜色的状态区别<br>   为了兼容5.0以下的设备,我们可以利用seletor(<strong>勘误:button用theme在5.0以下也是有按压变色的,虽然没有水波纹,下面的方法仍然适用其他控件的适配</strong>)<br>    <pre class="prettyprint"><code>&amp;lt;Button
+                    android:id=&lt;span class=&quot;hljs-string&quot;&gt;&quot;&lt;span class=&quot;hljs-variable&quot;&gt;@+&lt;/span&gt;id/confirm&quot;&lt;/span&gt;
+                    style=&lt;span class=&quot;hljs-string&quot;&gt;&quot;&lt;span class=&quot;hljs-variable&quot;&gt;@style&lt;/span&gt;/GreenButton&quot;&lt;/span&gt;
+                    android:text=&lt;span class=&quot;hljs-string&quot;&gt;&quot;&lt;span class=&quot;hljs-variable&quot;&gt;@string&lt;/span&gt;/confirm&quot;&lt;/span&gt; /&amp;gt;</code></pre></p>
+<pre><code>&lt;pre class=&quot;prettyprint&quot;&gt;`  &amp;lt;style &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;GreenButton&quot;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;android:layout_width&quot;&lt;/span&gt;&amp;gt;match_parent&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;android:layout_height&quot;&lt;/span&gt;&amp;gt;@dimen/button_height_tall&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;android:background&quot;&lt;/span&gt;&amp;gt;@drawable/selector_green_button&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;android:textColor&quot;&lt;/span&gt;&amp;gt;@color/white&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-property&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&quot;android:textSize&quot;&lt;/span&gt;&amp;gt;@dimen/font_large&amp;lt;/&lt;span class=&quot;hljs-property&quot;&gt;item&lt;/span&gt;&amp;gt;
+    &amp;lt;/style&amp;gt;`&lt;/pre&gt;
+</code></pre><p>  我们可以在drawable和drawable-v21下新建同一份文件selector_green_button.xml<br>    <pre class="prettyprint">`<span class="hljs-pi">&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-title">selector</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">“<a href="http://schemas.android.com/apk/res/android" target="_blank" rel="external">http://schemas.android.com/apk/res/android</a>“</span>&gt;</span></pre></p>
+<pre><code>    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:drawable&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:state_pressed&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;true&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/deep_green"</span> <span class="hljs-attribute">android:state_pressed</span>=<span class="hljs-value">"true"</span> /&gt;</span>
+    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:drawable&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/green&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;selector&lt;/span&gt;&amp;gt;&lt;/span&gt;`&lt;/pre&gt;
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/green"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">selector</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7</p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/green"</span> /&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7<br><strong>有个问题需要注意,如果的想要你的波纹没有按压的时候为透明状态,下面的写法是无效的.会导致按压没有效果</strong></p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@android:color/transparent"</span> /&gt;</span>//这里你用透明色和透明的图片都是没有效果的
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li><p>6<br>正取的做法如下:</p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-     <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:id</span>=<span class="hljs-value">"@android:id/mask"</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/white"</span> /&gt;</span>里面的色值可以任选一个
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li><p>6<br><strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id=”@<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id/mask”</strong>会让系统并不会真的绘制,并告知波纹的绘制边界</p>
-<p>如果写成下面,波纹的绘制范围会超出控件的边界<br><pre class="prettyprint">`<span class="hljs-comment">&lt;!–v21下 –&gt;</span><br><span class="hljs-pi">&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">“<a href="http://schemas.android.com/apk/res/android" target="_blank" rel="external">http://schemas.android.com/apk/res/android</a>“</span></span></pre></p>
-<pre><code>&lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
-</code></pre><p><span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span></p>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5<br>如上,这样设置后5.0以下的设备具有按钮按下变色的效果,5.0以上就具有水波纹效果.其他控件同理</li>
-</ul>
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;&amp;lt;!--v21下 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-pi&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
+    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:drawable&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/green&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt;&amp;gt;&lt;/span&gt;`&lt;/pre&gt;
+</code></pre><p>  <strong>有个问题需要注意,如果的想要你的波纹没有按压的时候为透明状态,下面的写法是无效的.会导致按压没有效果</strong></p>
+<pre><code>&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;&amp;lt;!--v21下 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-pi&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
+    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:drawable&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@android:color/transparent&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;//这里你用透明色和透明的图片都是没有效果的
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt;&amp;gt;&lt;/span&gt;`&lt;/pre&gt;
+</code></pre><p> 正取的做法如下:<br>    <pre class="prettyprint"><code>&lt;span class=&quot;hljs-comment&quot;&gt;&amp;lt;!--v21下 --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;hljs-pi&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
+         &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:id&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@android:id/mask&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;android:drawable&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/white&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;里面的色值可以任选一个
+    &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></p>
+<p>   <strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id=”@<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id/mask”</strong>会让系统并不会真的绘制,并告知波纹的绘制边界</p>
+<pre><code>如果写成下面,波纹的绘制范围会超出控件的边界
+&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-comment&quot;&gt;&amp;lt;!--v21下 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-pi&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;ripple&lt;/span&gt;&amp;gt;&lt;/span&gt;
+</code></pre><p>如上,这样设置后5.0以下的设备具有按钮按下变色的效果,5.0以上就具有水波纹效果.其他控件同理</p>
 
       
     </div>
@@ -303,6 +229,11 @@
   	<time datetime="2016-09-22T11:09:58.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-22</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -422,7 +353,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

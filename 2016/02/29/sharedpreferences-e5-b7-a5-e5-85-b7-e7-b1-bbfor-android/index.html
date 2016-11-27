@@ -9,36 +9,30 @@
   <title>SharedPreferences工具类for Android | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="&amp;nbsp;
-import android.content.Context;import android.content.SharedPreferences;
-import java.util.Map;
-/**
 
-Created by addi on 2016/2/29 0029.
-sharepreferences工具类/public class SPUtils {/*
-保存在手机里面的sp文件名">
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.Context;
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.SharedPreferences;
+
+import [java](htt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SharedPreferences工具类for Android">
 <meta property="og:url" content="http://addi.club/2016/02/29/sharedpreferences-e5-b7-a5-e5-85-b7-e7-b1-bbfor-android/index.html">
 <meta property="og:site_name" content="Addi的博客">
 <meta property="og:description" content="&amp;nbsp;
-import android.content.Context;import android.content.SharedPreferences;
-import java.util.Map;
-/**
 
-Created by addi on 2016/2/29 0029.
-sharepreferences工具类/public class SPUtils {/*
-保存在手机里面的sp文件名">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.Context;
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.SharedPreferences;
+
+import [java](htt">
+<meta property="og:updated_time" content="2016-11-27T07:52:43.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SharedPreferences工具类for Android">
 <meta name="twitter:description" content="&amp;nbsp;
-import android.content.Context;import android.content.SharedPreferences;
-import java.util.Map;
-/**
 
-Created by addi on 2016/2/29 0029.
-sharepreferences工具类/public class SPUtils {/*
-保存在手机里面的sp文件名">
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.Context;
+import [android](http://www.alimodern.com/tag/android &quot;android&quot;).content.SharedPreferences;
+
+import [java](htt">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -181,39 +175,110 @@ sharepreferences工具类/public class SPUtils {/*
     <div class="article-entry" itemprop="articleBody">
       
         <p>&nbsp;</p>
-<p>import <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.content.Context;<br>import <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.content.SharedPreferences;</p>
-<p>import <a href="http://www.alimodern.com/tag/java" title="java" target="_blank" rel="external">java</a>.util.Map;</p>
-<p>/**</p>
-<ul>
-<li>Created by <a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a> on 2016/2/29 0029.</li>
-<li>sharepreferences工具类<br><em>/<br>public class SPUtils {<br>/*</em></li>
-<li>保存在手机里面的sp文件名<br>*/<br>public static final String FILE_NAME = “my_sp”;</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>保存数据<br>*/<br>public static void put(Context context,String key, Object obj){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>if(obj instanceof Boolean){<br>editor.putBoolean(key,(Boolean) obj);<br>}<br>if(obj instanceof Float){<br>editor.putFloat(key,(Float)obj);<br>}<br>if (obj instanceof Integer){<br>editor.putInt(key,(Integer)obj);<br>}<br>if(obj instanceof Long){<br>editor.putLong(key,(Long)obj);<br>}<br>if(obj instanceof String){<br>editor.putString(key,(String)obj);<br>}<br>editor.commit();<br>}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>获取指定数据<br>*/<br>public static Object get(Context context,String key,Object defaultObj){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>if(defaultObj instanceof Boolean){<br>return sp.getBoolean(key,(Boolean)defaultObj);<br>}<br>if(defaultObj instanceof Float){<br>return sp.getFloat(key,(Float)defaultObj);<br>}<br>if(defaultObj instanceof Integer){<br>return sp.getInt(key,(Integer)defaultObj);<br>}<br>if(defaultObj instanceof Long){<br>return sp.getLong(key,(Long)defaultObj);<br>}<br>if(defaultObj instanceof String){<br>return sp.getString(key,(String)defaultObj);<br>}<br>return null;<br>}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>删除指定数据<br>*/<br>public static void remove(Context context,String key){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>editor.remove(key);<br>editor.commit();<br>}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>返回所有键值对<br>*/<br>public Map getAllKey(Context context){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>Map map = sp.getAll();<br>return map;<br>}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>删除所有数据<br>*/<br>public static void clear(Context context){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>editor.clear();<br>editor.commit();<br>}</li>
-</ul>
-<p>/**</p>
-<ul>
-<li>检查对应的数据是否存在<br>*/<br>public static boolean contains(Context context,String key){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>return sp.contains(key);<br>}</li>
-</ul>
-<p>}</p>
+<pre>
+import [android](http://www.alimodern.com/tag/android "android").content.Context;
+import [android](http://www.alimodern.com/tag/android "android").content.SharedPreferences;
+
+import [java](http://www.alimodern.com/tag/java "java").util.Map;
+
+/**
+* Created by [addi](http://www.alimodern.com/tag/addi "addi") on 2016/2/29 0029.
+* sharepreferences工具类
+*/
+public class SPUtils {
+/**
+* 保存在手机里面的sp文件名
+*/
+public static final String FILE_NAME = "my_sp";
+
+/**
+* 保存数据
+*/
+public static void put(Context context,String key, Object obj){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+SharedPreferences.Editor editor = sp.edit();
+if(obj instanceof Boolean){
+editor.putBoolean(key,(Boolean) obj);
+}
+if(obj instanceof Float){
+editor.putFloat(key,(Float)obj);
+}
+if (obj instanceof Integer){
+editor.putInt(key,(Integer)obj);
+}
+if(obj instanceof Long){
+editor.putLong(key,(Long)obj);
+}
+if(obj instanceof String){
+editor.putString(key,(String)obj);
+}
+editor.commit();
+}
+
+/**
+* 获取指定数据
+*/
+public static Object get(Context context,String key,Object defaultObj){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+if(defaultObj instanceof Boolean){
+return sp.getBoolean(key,(Boolean)defaultObj);
+}
+if(defaultObj instanceof Float){
+return sp.getFloat(key,(Float)defaultObj);
+}
+if(defaultObj instanceof Integer){
+return sp.getInt(key,(Integer)defaultObj);
+}
+if(defaultObj instanceof Long){
+return sp.getLong(key,(Long)defaultObj);
+}
+if(defaultObj instanceof String){
+return sp.getString(key,(String)defaultObj);
+}
+return null;
+}
+
+/**
+* 删除指定数据
+*/
+public static void remove(Context context,String key){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+SharedPreferences.Editor editor = sp.edit();
+editor.remove(key);
+editor.commit();
+}
+
+/**
+* 返回所有键值对
+*/
+public Map getAllKey(Context context){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+Map map = sp.getAll();
+return map;
+}
+
+/**
+* 删除所有数据
+*/
+public static void clear(Context context){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+SharedPreferences.Editor editor = sp.edit();
+editor.clear();
+editor.commit();
+}
+
+/**
+* 检查对应的数据是否存在
+*/
+public static boolean contains(Context context,String key){
+SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);
+return sp.contains(key);
+}
+
+}
+
+</pre>
+
 <p>工具类来自菜鸟教程，自己亲手码的，Mark~~~</p>
 
       
@@ -348,7 +413,7 @@ sharepreferences工具类/public class SPUtils {/*
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

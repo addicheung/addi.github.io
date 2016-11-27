@@ -11,12 +11,7 @@
   <meta name="description" content="今天学习到Date&amp;amp;Time的组件
 学到Chronmeter组件时又介绍如何做一个小小的计时器
 看了挺简单，自己也试着实现了一下
-界面布局很简单，主要是一个Chronmeter组件和4个button
-布局代码如下：
-&amp;nbsp;
-
-`
-&amp;lt; ?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;">
+界面布局很简单，主要是一个Chronmeter组件和4个button">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习笔记-2">
 <meta property="og:url" content="http://addi.club/2016/01/31/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-2/index.html">
@@ -24,24 +19,14 @@
 <meta property="og:description" content="今天学习到Date&amp;amp;Time的组件
 学到Chronmeter组件时又介绍如何做一个小小的计时器
 看了挺简单，自己也试着实现了一下
-界面布局很简单，主要是一个Chronmeter组件和4个button
-布局代码如下：
-&amp;nbsp;
-
-`
-&amp;lt; ?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.245Z">
+界面布局很简单，主要是一个Chronmeter组件和4个button">
+<meta property="og:updated_time" content="2016-11-27T07:41:47.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习笔记-2">
 <meta name="twitter:description" content="今天学习到Date&amp;amp;Time的组件
 学到Chronmeter组件时又介绍如何做一个小小的计时器
 看了挺简单，自己也试着实现了一下
-界面布局很简单，主要是一个Chronmeter组件和4个button
-布局代码如下：
-&amp;nbsp;
-
-`
-&amp;lt; ?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;">
+界面布局很简单，主要是一个Chronmeter组件和4个button">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -187,88 +172,67 @@
 <p>学到Chronmeter组件时又介绍如何做一个小小的计时器</p>
 <p>看了挺简单，自己也试着实现了一下</p>
 <p>界面布局很简单，主要是一个Chronmeter组件和4个button</p>
+<a id="more"></a>
 <p>布局代码如下：</p>
 <p>&nbsp;</p>
-<pre>
-`
-< ?xml version="1.0" encoding="utf-8"?>
-<relativelayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingbottom="@dimen/activity_vertical_margin" android:paddingleft="@dimen/activity_horizontal_margin" android:paddingright="@dimen/activity_horizontal_margin" android:paddingtop="@dimen/activity_vertical_margin" tools:context="com.teamx.myapplication15.Main2Activity">
-    <chronometer android:id="@+id/chronometer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center_horizontal" android:textsize="60sp" android:textcolor="#DD0000"></chronometer>
-    <linearlayout android:layout_below="@+id/chronometer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:layout_margintop="10dp">
-        <button android:id="@+id/btStart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="开始计时"></button>
-        <button android:id="@+id/btStop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="暂停"></button>
-        <button android:id="@+id/btReset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="重置"></button>
-        <button android:id="@+id/btFormat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="格式化"></button>
-    </linearlayout>
+<p>`<br>    &lt; ?xml version=”1.0” encoding=”utf-8”?&gt;<br>    <relativelayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingbottom="@dimen/activity_vertical_margin" android:paddingleft="@dimen/activity_horizontal_margin" android:paddingright="@dimen/activity_horizontal_margin" android:paddingtop="@dimen/activity_vertical_margin" tools:context="com.teamx.myapplication15.Main2Activity"><br>    <chronometer android:id="@+id/chronometer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center_horizontal" android:textsize="60sp" android:textcolor="#DD0000"></chronometer><br>    <linearlayout android:layout_below="@+id/chronometer" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:layout_margintop="10dp"><br>        <button android:id="@+id/btStart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="开始计时"></button><br>        <button android:id="@+id/btStop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="暂停"></button><br>        <button android:id="@+id/btReset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="重置"></button><br>        <button android:id="@+id/btFormat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textsize="12sp" android:text="格式化"></button><br>    </linearlayout><br>    </relativelayout></p>
+<p>`</p>
+<p>功能逻辑方面，主要是获取组件实例后，设置监听事件，调用Chronmter的对应方法实现计时：<br>逻辑代码：<br>`<br>    import android.os.Bundle;<br>    import android.os.SystemClock;<br>    import android.support.v7.app.AppCompatActivity;<br>    import android.view.View;<br>    import android.widget.Button;<br>    import android.widget.Chronometer;<br>    import android.widget.Toast;</p>
+<pre><code>public class Main2Activity extends AppCompatActivity implements View.OnClickListener,Chronometer.OnChronometerTickListener{
 
-</relativelayout>
-`
-</pre>
-功能逻辑方面，主要是获取组件实例后，设置监听事件，调用Chronmter的对应方法实现计时：
-逻辑代码：
-<pre>import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Chronometer;
-import android.widget.Toast;
+private Chronometer chronometer;
+private Button start,stop,reset,format;
 
-public class Main2Activity extends AppCompatActivity implements View.OnClickListener,Chronometer.OnChronometerTickListener{
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main2);
+    initView();
 
-    private Chronometer chronometer;
-    private Button start,stop,reset,format;
+}
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        initView();
+public void initView(){
+    start = (Button)super.findViewById(R.id.btStart);
+    stop = (Button)super.findViewById(R.id.btStop);
+    reset = (Button)super.findViewById(R.id.btReset);
+    format = (Button)super.findViewById(R.id.btFormat);
+    chronometer = (Chronometer)super.findViewById(R.id.chronometer);
+    start.setOnClickListener(this);
+    stop.setOnClickListener(this);
+    reset.setOnClickListener(this);
+    format.setOnClickListener(this);
+    chronometer.setOnChronometerTickListener(this);
 
-    }
+}
 
-    public void initView(){
-        start = (Button)super.findViewById(R.id.btStart);
-        stop = (Button)super.findViewById(R.id.btStop);
-        reset = (Button)super.findViewById(R.id.btReset);
-        format = (Button)super.findViewById(R.id.btFormat);
-        chronometer = (Chronometer)super.findViewById(R.id.chronometer);
-        start.setOnClickListener(this);
-        stop.setOnClickListener(this);
-        reset.setOnClickListener(this);
-        format.setOnClickListener(this);
-        chronometer.setOnChronometerTickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btStart:
-                chronometer.start();
-                break;
-            case R.id.btStop:
-                chronometer.stop();
-                break;
-            case R.id.btReset:
-                chronometer.setBase(SystemClock.elapsedRealtime());
-                break;
-            case  R.id.btFormat:
-                chronometer.setFormat("Time %s");
-                break;
-        }
-    }
-
-    @Override
-    public void onChronometerTick(Chronometer chronometer) {
-        String time = chronometer.getText().toString();
-        if(time.equals("00:00")){
-            Toast.makeText(Main2Activity.this, "时间到了~", Toast.LENGTH_SHORT).show();
-        }
+@Override
+public void onClick(View v) {
+    switch (v.getId()){
+        case R.id.btStart:
+            chronometer.start();
+            break;
+        case R.id.btStop:
+            chronometer.stop();
+            break;
+        case R.id.btReset:
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            break;
+        case  R.id.btFormat:
+            chronometer.setFormat(&quot;Time %s&quot;);
+            break;
     }
 }
 
-</pre>
+@Override
+public void onChronometerTick(Chronometer chronometer) {
+    String time = chronometer.getText().toString();
+    if(time.equals(&quot;00:00&quot;)){
+        Toast.makeText(Main2Activity.this, &quot;时间到了~&quot;, Toast.LENGTH_SHORT).show();
+    }
+}
+}
+</code></pre><p>`</p>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -401,7 +365,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

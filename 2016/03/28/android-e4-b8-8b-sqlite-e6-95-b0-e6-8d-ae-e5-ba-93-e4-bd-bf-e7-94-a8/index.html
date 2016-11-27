@@ -13,8 +13,7 @@
 
 SQLite是一个轻量级的关系型数据库，运算速度快，占用资源少，很适合在移动设备上使用，支持标准SQL语法，遵循ACID(数据库事务)原则
 SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的
-
-你可以各种数据类型的数据保">
+你可以各种数据类型的数据保存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android下--SQLite数据库使用">
 <meta property="og:url" content="http://addi.club/2016/03/28/android-e4-b8-8b-sqlite-e6-95-b0-e6-8d-ae-e5-ba-93-e4-bd-bf-e7-94-a8/index.html">
@@ -24,9 +23,8 @@ SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符�
 
 SQLite是一个轻量级的关系型数据库，运算速度快，占用资源少，很适合在移动设备上使用，支持标准SQL语法，遵循ACID(数据库事务)原则
 SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的
-
-你可以各种数据类型的数据保">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.252Z">
+你可以各种数据类型的数据保存">
+<meta property="og:updated_time" content="2016-11-27T07:40:00.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android下--SQLite数据库使用">
 <meta name="twitter:description" content="&amp;nbsp;
@@ -34,8 +32,7 @@ SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符�
 
 SQLite是一个轻量级的关系型数据库，运算速度快，占用资源少，很适合在移动设备上使用，支持标准SQL语法，遵循ACID(数据库事务)原则
 SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的
-
-你可以各种数据类型的数据保">
+你可以各种数据类型的数据保存">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
   
@@ -181,13 +178,14 @@ SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符�
 <p>##SQLite简单介绍</p>
 <ol>
 <li>SQLite是一个轻量级的关系型数据库，运算速度快，占用资源少，很适合在移动设备上使用，支持标准SQL语法，遵循ACID(数据库事务)原则</li>
-<li><p>SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的</p>
-<blockquote>
+<li>SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的<blockquote>
 <p>你可以各种数据类型的数据保存到任何字段中而不用关心字段声明的数据类型是什么,比如你 可以在Integer类型的字段中存放字符串,当然除了声明为主键INTEGER PRIMARY KEY的字段只能够存储64位整数！ 另外， SQLite 在解析CREATE TABLE 语句时， 会忽略 CREATE TABLE 语句中跟在字段名后面的数据类型信息如下面语句会忽略 name字段的类型信息： CREATE TABLE person (personid integer primary key autoincrement, name varchar(20))</p>
 </blockquote>
 </li>
-<li><p>SQlite通过文件来保存数据库，一个文件就是一个数据库，数据库中又包含多个表格，表格里又有 多条记录，每个记录由多个字段构成，每个字段有对应的值，每个值我们可以指定类型，也可以不指定 类型(主键除外)<br>##SQLite数据库相关的类</p>
-</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li>SQlite通过文件来保存数据库，一个文件就是一个数据库，数据库中又包含多个表格，表格里又有 多条记录，每个记录由多个字段构成，每个字段有对应的值，每个值我们可以指定类型，也可以不指定 类型(主键除外)<br>##SQLite数据库相关的类</li>
 </ol>
 <ul>
 <li>SQLiteOPenHelper：抽象类，通过继承该类，然后重写数据库创建以及更新方法，我们还可以通过该类的对象获取数据库实例，或者关闭数据库</li>
@@ -328,7 +326,7 @@ SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符�
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

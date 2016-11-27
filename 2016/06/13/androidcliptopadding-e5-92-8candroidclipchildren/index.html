@@ -9,32 +9,20 @@
   <title>android:clipToPadding和android:clipChildren | Addi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
-正常态：
-
-滚动态:
-
-乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+正常态：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android:clipToPadding和android:clipChildren">
 <meta property="og:url" content="http://addi.club/2016/06/13/androidcliptopadding-e5-92-8candroidclipchildren/index.html">
 <meta property="og:site_name" content="Addi的博客">
 <meta property="og:description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
-正常态：
-
-滚动态:
-
-乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+正常态：">
 <meta property="og:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png">
 <meta property="og:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596831861410.png">
-<meta property="og:updated_time" content="2016-11-27T07:15:19.253Z">
+<meta property="og:updated_time" content="2016-11-27T07:39:31.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android:clipToPadding和android:clipChildren">
 <meta name="twitter:description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
-正常态：
-
-滚动态:
-
-乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+正常态：">
 <meta name="twitter:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png">
   
     <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
@@ -180,6 +168,7 @@
         <p>假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：</p>
 <p><span id="more-5944"></span>正常态：</p>
 <p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png" alt="normal"></p>
+<a id="more"></a>
 <p>滚动态:</p>
 <p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596831861410.png" alt="scroll"></p>
 <p>乍一看，不是很简单吗，只要设置一下marginTop或者p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop就可以了，但问题是只用这两个其中一个属性的话，ListView 滑动的时候就不能滚到p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop或者marginTop那部分区域，有人说可以用HeaderView来解决，这是其中一个办法，但仅仅了为这 个占空使用HeadView有点浪费而且会影响onItemClick的position.于是这里介绍可以到这个效果的两个属性，就是 <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipToP<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng和<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipChildren,这两个属性不是太多人用到，这里说明一下</p>
@@ -220,6 +209,11 @@
   	<time datetime="2016-06-13T04:51:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-06-13</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -339,7 +333,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     

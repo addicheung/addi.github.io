@@ -142,6 +142,123 @@
       <div class="body-wrap">
         
   
+    <article id="post-android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/27/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/">Android Studio下自定义命名空间出现的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。</p>
+<p>后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。</p>
+<p>报错：</p>
+<p><img src="http://source.alimodern.com/wp-content/uploads/2016/03/1.png" alt="错误"></p>
+<hr>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/11/27/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/27/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/" class="archive-article-date">
+  	<time datetime="2016-11-27T07:15:19.237Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-27</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/">android学习笔记-7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基于回调的事件处理机制"><a href="#基于回调的事件处理机制" class="headerlink" title="基于回调的事件处理机制:"></a>基于回调的事件处理机制:</h3><p>传播的顺序是: <strong>监听器</strong>—&gt;<strong>view组件的回调方法</strong>—&gt;<strong>Activity的回调方法</strong></p>
+<p>&nbsp;</p>
+<h3 id="Handler消息传递机制："><a href="#Handler消息传递机制：" class="headerlink" title="Handler消息传递机制："></a>Handler消息传递机制：</h3><h4 id="Handler的相关方法"><a href="#Handler的相关方法" class="headerlink" title="Handler的相关方法:"></a>Handler的相关方法:</h4><ul>
+<li>void <strong>handleMessage</strong>(Message msg):处理消息的方法,通常是用于被重写!</li>
+<li><strong>sendEmptyMessage</strong>(int what):发送空消息</li>
+<li><strong>sendEmptyMessageDelayed</strong>(int what,long delayMillis):指定延时多少毫秒后发送空信息</li>
+<li><strong>sendMessage</strong>(Message msg):立即发送信息</li>
+<li><strong>sendMessageDelayed</strong>(Message msg):指定延时多少毫秒后发送信息</li>
+<li>final boolean <strong>hasMessage</strong>(int what):检查消息队列中是否包含what属性为指定值的消息 如果是参数为(int what,Object object):除了判断what属性,还需要判断Object属性是否为指定对象的消息。</li>
+</ul>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/11/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/#more">more >></a>
+        </p>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/27/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/" class="archive-article-date">
+  	<time datetime="2016-11-27T07:15:19.235Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-27</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2016-11-27的碎碎念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -192,59 +309,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/26/hello-world/" class="archive-article-date">
-  	<time datetime="2016-11-26T14:06:39.382Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-26</time>
-</a>
-      
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
     <article id="post-android5-0-e4-bb-a5-e4-b8-8a-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89button-background-e6-97-b6-ef-bc-8c-e5-a4-b1-e5-8e-bbripple-e6-95-88-e6-9e-9c-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95-e3-80-82" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -271,32 +335,11 @@
 
 又如果是这样：</pre>
 <pre>android:background="@drawable/btn_selector"
-
-这时候，自定义了一个selector
-
-如下：</pre>
-<pre>&lt;selector  xmlns:android="http://schemas.android.com/apk/res/android"&gt;
-    &lt;item android:state_enabled="true" android:drawable="@color/colorPrimary"/&gt;
-    &lt;item android:state_pressed="true" android:drawable="@color/colorPrimaryDark"/&gt;
-&lt;/selector&gt;
-
-分别定义了，默认按钮颜色，和按压的时候的颜色。这样也会没有Ripple效果。
-
-那么怎样才行呢？
-
-这时候需要在drawable-v21下新建同一份文件btn_selector.xml
-
-内容如下：</pre>
-<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/colorPrimaryDark"&gt;//这里是扩散水波纹的色值
-    &lt;item android:drawable="@color/colorPrimary" /&gt;
-&lt;/ripple&gt;
-
-根标签为ripple ，这个是自定义的ripple颜色效果。所以，需要这样才能显示ripple.</pre>
-<pre>
-
 </pre>
+这时候，自定义了一个selector
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/09/22/android5-0-e4-bb-a5-e4-b8-8a-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89button-background-e6-97-b6-ef-bc-8c-e5-a4-b1-e5-8e-bbripple-e6-95-88-e6-9e-9c-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95-e3-80-82/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -305,6 +348,11 @@
   	<time datetime="2016-09-22T11:30:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-22</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -346,127 +394,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>从5.0开始,一些控件的点击时候默认是有水纹效果的如下图</p>
-<p><img src="http://img.blog.csdn.net/20160324165721725" alt="这里写图片描述"></p>
-<p>以Button举例可以按照如下使用:<br>注意是<strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:theme</strong></p>
-<pre><code>&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;Button&lt;/span&gt;  
-    &lt;span class=&quot;hljs-attribute&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;android:text&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;Button&quot;&lt;/span&gt;
-    &lt;span class=&quot;hljs-attribute&quot;&gt;android:theme&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@style/MyButton&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;`&lt;/pre&gt;
-</code></pre><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li><p>5<br>自定义样式:</p>
-<pre class="prettyprint">`&lt;style <span class="hljs-property">name</span>=<span class="hljs-string">"MyButton"</span> parent=<span class="hljs-string">"Theme.AppCompat.Light"</span>&gt;  
-    &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"colorControlHighlight"</span>&gt;@color/indigo&lt;/<span class="hljs-property">item</span>&gt;
-    &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"colorButtonNormal"</span>&gt;@color/pink&lt;/<span class="hljs-property">item</span>&gt;
-&lt;/style&gt;  `</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li><p>4<br>但是这样在5.0以下的系统,这样就没有效果,按钮会变成默认的灰色状态,点击按钮也不会有颜色的状态区别<br>为了兼容5.0以下的设备,我们可以利用seletor(<strong>勘误:button用theme在5.0以下也是有按压变色的,虽然没有水波纹,下面的方法仍然适用其他控件的适配</strong>)</p>
-<pre class="prettyprint">` &lt;Button
-                android:id=<span class="hljs-string">"<span class="hljs-variable">@+</span>id/confirm"</span>
-                style=<span class="hljs-string">"<span class="hljs-variable">@style</span>/GreenButton"</span>
-                android:text=<span class="hljs-string">"<span class="hljs-variable">@string</span>/confirm"</span> /&gt;`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li><p>4</p>
-<pre class="prettyprint">`  &lt;style <span class="hljs-property">name</span>=<span class="hljs-string">"GreenButton"</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:layout_width"</span>&gt;match_parent&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:layout_height"</span>&gt;@dimen/button_height_tall&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:background"</span>&gt;@drawable/selector_green_button&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:textColor"</span>&gt;@color/white&lt;/<span class="hljs-property">item</span>&gt;
-        &lt;<span class="hljs-property">item</span> <span class="hljs-property">name</span>=<span class="hljs-string">"android:textSize"</span>&gt;@dimen/font_large&lt;/<span class="hljs-property">item</span>&gt;
-    &lt;/style&gt;`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7<br>我们可以在drawable和drawable-v21下新建同一份文件selector_green_button.xml</p>
-<pre class="prettyprint">`<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">selector</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/deep_green"</span> <span class="hljs-attribute">android:state_pressed</span>=<span class="hljs-value">"true"</span> /&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/green"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">selector</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7</p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/green"</span> /&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li>6</li>
-<li><p>7<br><strong>有个问题需要注意,如果的想要你的波纹没有按压的时候为透明状态,下面的写法是无效的.会导致按压没有效果</strong></p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-    <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@android:color/transparent"</span> /&gt;</span>//这里你用透明色和透明的图片都是没有效果的
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li><p>6<br>正取的做法如下:</p>
-<pre class="prettyprint">`<span class="hljs-comment">&lt;!--v21下 --&gt;</span>
-<span class="hljs-pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">"http://schemas.android.com/apk/res/android"</span>
-    <span class="hljs-attribute">android:color</span>=<span class="hljs-value">"@color/deep_green"</span>&gt;</span>//这里是扩散水波纹的色值
-     <span class="hljs-tag">&lt;<span class="hljs-title">item</span> <span class="hljs-attribute">android:id</span>=<span class="hljs-value">"@android:id/mask"</span> <span class="hljs-attribute">android:drawable</span>=<span class="hljs-value">"@color/white"</span> /&gt;</span>里面的色值可以任选一个
-<span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span>`</pre>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li><p>6<br><strong><a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id=”@<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:id/mask”</strong>会让系统并不会真的绘制,并告知波纹的绘制边界</p>
-<p>如果写成下面,波纹的绘制范围会超出控件的边界<br><pre class="prettyprint">`<span class="hljs-comment">&lt;!–v21下 –&gt;</span><br><span class="hljs-pi">&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-title">ripple</span> <span class="hljs-attribute">xmlns:android</span>=<span class="hljs-value">“<a href="http://schemas.android.com/apk/res/android" target="_blank" rel="external">http://schemas.android.com/apk/res/android</a>“</span></span></pre></p>
-<pre><code>&lt;span class=&quot;hljs-attribute&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;@color/deep_green&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;//这里是扩散水波纹的色值
-</code></pre><p><span class="hljs-tag">&lt;/<span class="hljs-title">ripple</span>&gt;</span></p>
-</li>
-<li><p>1</p>
-</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li>5<br>如上,这样设置后5.0以下的设备具有按钮按下变色的效果,5.0以上就具有水波纹效果.其他控件同理</li>
-</ul>
-
+<p><img src="http://img.blog.csdn.net/20160324165721725" alt="这里写图片描述">  </p>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/09/22/android-5-0-button-e6-8c-89-e9-92-ae-e6-b0-b4-e7-ba-b9-e6-95-88-e6-9e-9c-e7-9a-84-e9-80-82-e9-85-8d-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e8-87-aa-e5-ae-9a-e4-b9-89button-e9-a2-9c-e8-89-b2-e6-97-b6/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -475,6 +406,11 @@
   	<time datetime="2016-09-22T11:09:58.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-22</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -518,38 +454,9 @@
         <p>假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：</p>
 <p><span id="more-5944"></span>正常态：</p>
 <p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png" alt="normal"></p>
-<p>滚动态:</p>
-<p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596831861410.png" alt="scroll"></p>
-<p>乍一看，不是很简单吗，只要设置一下marginTop或者p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop就可以了，但问题是只用这两个其中一个属性的话，ListView 滑动的时候就不能滚到p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop或者marginTop那部分区域，有人说可以用HeaderView来解决，这是其中一个办法，但仅仅了为这 个占空使用HeadView有点浪费而且会影响onItemClick的position.于是这里介绍可以到这个效果的两个属性，就是 <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipToP<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng和<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipChildren,这两个属性不是太多人用到，这里说明一下</p>
-<p>clipToP<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng就是说控件的绘制区域是否在p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng里面的，true的情况下如果你设置了p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng那么绘制的区域就往里 缩，clipChildren是指子控件是否超过p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng区域，这两个属性默认是true的，所以在设置了p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng情况下，默认滚动是在 p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng内部的，要达到上面的效果主要把这两个属性设置了false那么这样子控件就能画到p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng的区域了。</p>
-<p><div></div></p>
-<p><div id="highlighter_46881" class="syntaxhighlighter  js"></div></p>
-<p><table border="0" cellspacing="0" cellpadding="0"></table></p>
-<p><tbody></tbody></p>
-<p><tr></tr></p>
-<p><td class="gutter"></td></p>
-<p><div class="line number1 index0 alt2">1</div></p>
-<p><div class="line number2 index1 alt1">2</div></p>
-<p><div class="line number3 index2 alt2">3</div></p>
-<p><div class="line number4 index3 alt1">4</div></p>
-<p><div class="line number5 index4 alt2">5</div></p>
-<p><div class="line number6 index5 alt1">6</div></p>
-<p><div class="line number7 index6 alt2">7</div></p>
-<p><div class="line number8 index7 alt1">8</div></p>
-<p><td class="code"></td></p>
-<p><div class="container"></div></p>
-<p><div class="line number1 index0 alt2"><code>&amp;lt;ListView</code></div></p>
-<p><div class="line number2 index1 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_gravity=``&quot;center_vertical&quot;</code></div></p>
-<p><div class="line number3 index2 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):id=``&quot;@+id/list&quot;</code></div></p>
-<p><div class="line number4 index3 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):clipChildren=``&quot;false&quot;</code></div></p>
-<p><div class="line number5 index4 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):clipToP[addi](http://www.alimodern.com/tag/addi &quot;addi&quot;)ng=``&quot;false&quot;</code></div></p>
-<p><div class="line number6 index5 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):p[addi](http://www.alimodern.com/tag/addi &quot;addi&quot;)ngTop=``&quot;50dip&quot;</code></div></p>
-<p><div class="line number7 index6 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_width=``&quot;match_parent&quot;</code></div></p>
-<p><div class="line number8 index7 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_height=``&quot;match_parent&quot;``&amp;gt;</code></div><br><br><br><br><br><br><br>Actionbar半透明就不详细说了，只要设置actionbarOverlay为true并为ActionBar设置一个半透明的background即可.</p>
-<p>这个属性<code>RecyclerView</code>也有，是同样的意思。</p>
-<p>&nbsp;</p>
-<p>转载自：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0317/2613.html" target="_blank" rel="external">泡在网上的日子</a></p>
-
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/06/13/androidcliptopadding-e5-92-8candroidclipchildren/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -558,6 +465,11 @@
   	<time datetime="2016-06-13T04:51:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-06-13</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 	<i class="icon-price-tags"></i>
@@ -599,126 +511,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>一天过得真TM快，今天啥事没干到，就帮朋友圈做了个小应用… 朋友说他想要一个自动滑动屏幕的应用，虽然不知道他想用来干啥（我也没问），想着可以练练手 于是没多想就答应了，然后开始google一些解决方案，我首先想到的是可不可以使用模拟一些触摸事件的方法呢， 于是就Google到一个Android的单元测试框架，叫做Instrumentation，使用个框架可以模拟一些系统事件 例如KeyDown，KeyUp什么的，还有就是Move事件，详细见官方文档： 于是我写了下面一段代码：</p>
-<pre><code>    Instrumentation instrumentation  = new Instrumentation();
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_DOWN,200,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,300,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,500,300,0));
-    instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,600,300,0));
+<pre><code>  Instrumentation instrumentation  = new Instrumentation();
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_DOWN,200,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,300,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_MOVE,500,300,0));
+  instrumentation.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),SystemClock.uptimeMillis(),MotionEvent.ACTION_UP,600,300,0));
 
-  `&lt;/pre&gt;
-
-这段代码可以成功的模拟触摸滑动事件，但是将应用切换后台之后，就不能用了，我想实现的是这个应用启动一个service
-然后就可以控制系统全局应用的滑动。这个方法不能解决我的问题
-
-然后怎么办呢，然后我就到stackoverflow上看看大神的回答，然后看到有人回答说可以尝试用adb命令进行模拟 然后我写了下面的代码：
-
-/* Created by AddiCheung on 2016/4/24 0024\. */ public class MoveService extends Service {
-
-&lt;pre class=&quot;para-block pre-indented&quot;&gt;`private OutputStream os;
-private int width;
-private int height;
-private int realTime = 10;
-
-@Nullable
-@Override
-public IBinder onBind(Intent intent) {
-    return null;
-}
-
-@Override
-public void onCreate() {
-    Log.i(&quot;onCreate()&quot;,&quot;执行~~~~~~~~~&quot;);
-    super.onCreate();
-   /* Notification.Builder localBuilder = new Notification.Builder(this);
-    localBuilder.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0));
-    localBuilder.setAutoCancel(true);
-    localBuilder.setSmallIcon(R.mipmap.ic_launcher);
-    localBuilder.setTicker(&quot;Foreground Service Start&quot;);
-    localBuilder.setContentTitle(&quot;自动滑动服务&quot;);
-    localBuilder.setContentText(&quot;正在运行...(触摸进入app暂停)&quot;);
-    startForeground(1, localBuilder.getNotification());*/
-
-    WindowManager manager = (WindowManager) getApplicationContext().getSystemService(WINDOW_SERVICE);
-    width = manager.getDefaultDisplay().getWidth();
-    height = manager.getDefaultDisplay().getHeight();
-}
-
-@Override
-public int onStartCommand(Intent intent, int flags, int startId) {
-    realTime = MainActivity.time;
-    Log.i(&quot;onStartCommand()&quot;,&quot;执行~~~~~~~~~&quot;);
-    new Thread() {
-        @Override
-        public void run() {
-            //屏幕滑动adb命令
-            String cmdRight = &quot;input swipe &quot;+20+&quot; &quot;+height/2+&quot; &quot;+(width-20)+&quot; &quot;+height/2+&quot;\n&quot;;
-            String cmdLeft = &quot;input swipe &quot;+(width-20)+&quot; &quot;+height/2+&quot; &quot;+20+&quot; &quot;+height/2+&quot;\n&quot;;
-           String cmd = MainActivity.isLeft?cmdLeft:cmdRight;
-            Log.i(&quot;cmd command&quot;,cmd);
-                try {
-                    if (os == null) {
-                        Log.i(&quot;Runtime&quot;, &quot;~~~~~~~~~~~~&quot;);
-                        os = Runtime.getRuntime().exec(&quot;su&quot;).getOutputStream();
-                    }
-                        os.write(cmd.getBytes());
-                        os.flush();
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-
-            }
-     }.start();
-    if(!MainActivity.isQuit) {
-        AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        int anHour = realTime * 1000;
-        Log.i(&quot;time&quot;, &quot;====&quot; + realTime);
-        long triggerAtTime = SystemClock.elapsedRealtime() + anHour;
-        Intent i = new Intent(this, TimeReceiver.class);
-        PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
-        manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
-    }
-    return super.onStartCommand(intent, flags, startId);
-}
-
-@Override
-public boolean onUnbind(Intent intent) {
-    return true;
-}
-
-@Override
-public void onDestroy() {
-
-    Log.i(&quot;onDestroy()&quot;,&quot;执行~~~~~~~~~&quot;);
-    super.onDestroy();
-}
-}`&lt;/pre&gt;
-
-这是整个小应用的核心，是一个service重点看线程run方法中的代码：
-
-&lt;pre class=&quot;para-block pre-indented&quot;&gt;`public void run() {
-            //屏幕滑动adb命令
-            String cmdRight = &quot;input swipe &quot;+20+&quot; &quot;+height/2+&quot; &quot;+(width-20)+&quot; &quot;+height/2+&quot;\n&quot;;
-            String cmdLeft = &quot;input swipe &quot;+(width-20)+&quot; &quot;+height/2+&quot; &quot;+20+&quot; &quot;+height/2+&quot;\n&quot;;
-           String cmd = MainActivity.isLeft?cmdLeft:cmdRight;
-            Log.i(&quot;cmd command&quot;,cmd);
-                try {
-                    if (os == null) {
-                        Log.i(&quot;Runtime&quot;, &quot;~~~~~~~~~~~~&quot;);
-                        os = Runtime.getRuntime().exec(&quot;su&quot;).getOutputStream();
-                    }
-                        os.write(cmd.getBytes());
-                        os.flush();
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-
-            }
-     }.start();
-</code></pre><p>主要有两个命令，分别是控制从左往右滑动和从右往左滑动，然后可以看到Runtime.getRuntime().exec(“su”).getOutputStream();<br>用于获取su权限，用过linux的人都知道，这个su权限在Android中就叫root权限了，root知道了把（因为用到这个所以你的手机必须root后才能用这个app）<br>获取对应输出流，然后就是输出执行命令了。</p>
-<p>这里还要说一下，service的事情，起初我就只定写了一个service,里面添加一个线程循环执行方法，执行adb命令，只会执行一次，应该是切换进后台的原因，因此我参照<br>一些后台轮询service的实现方法，然后奏效了。</p>
-<p>代码已经push到了Github，<a href="https://github.com/addiz/TouchEvent" target="_blank" rel="external">传送门</a></p>
-<p>ADB命令说明：<a href="https://developer.[android](http://www.alimodern.com/tag/android" target="_blank" rel="external">https://developer.[android](http://www.alimodern.com/tag/android</a> “android”).com/intl/zh-cn/tools/help/adb.html</p>
-
+`&lt;/pre&gt;
+</code></pre><p>   这段代码可以成功的模拟触摸滑动事件，但是将应用切换后台之后，就不能用了，我想实现的是这个应用启动一个service<br>   然后就可以控制系统全局应用的滑动。这个方法不能解决我的问题<br>
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/04/25/e5-88-a9-e7-94-a8abd-e5-91-bd-e4-bb-a4-e5-ae-9e-e7-8e-b0-e7-b1-bb-e4-bc-bcandroid-e6-8c-89-e9-94-ae-e7-b2-be-e7-81-b5-e7-9a-84-e5-8a-9f-e8-83-bd/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -777,29 +580,9 @@ public void onDestroy() {
 <p>这次活动也接近尾声了，最后要求每一位学员都提交一个结业的作业，就是要自己动手写一个Android App出来。 我选择了以英雄联盟为主题去制作一个小app，但是上网找数据接口的时候发现，官方并没有提供英雄联盟中国区的玩家数据接口！！</p>
 <p>这真是bi le gou 了，不过还是有一些第三方的api接口，不过查询到的数据也是太抠脚了，更新有点慢…凑合着用把….</p>
 <p>这个app当然是要采用MD设计的，个人是非常喜欢这个设计啊啊，喜欢得不得了，但是还没时间去深入研究Material Design，因为最近都要补基础 (基础较弱的孩子伤不起)</p>
-<p>下面贴一下采用的一些库：</p>
-<pre><code>compile &apos;com.android.support:appcompat-v7:23.3.0&apos;
-compile &apos;com.android.support:design:23.3.0&apos;
-compile &apos;com.kymjs.rxvolley:rxvolley:1.0.7&apos;
-compile &apos;com.kymjs.rxvolley:bitmapcore:1.0.7&apos;
-compile &apos;com.android.support:cardview-v7:23.1.1&apos;
-compile &apos;com.google.code.gson:gson:2.2.4&apos;
-</code></pre><p>主要用到了com.<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.support:design:23.3.0库里面的一些控件，实现了一些比较不错的效果</p>
-<p>网络使用到了RxVolley ，感觉使用起来很方便,可以适当地对他进行封装，满足自己项目的需求就好；</p>
-<blockquote>
-<p>概述 RxVolley是一个基于Volley的网络请求库； 同时支持RxJava； 可以选择使用OKHttp替代默认的 HttpUrlConnection 做网络请求； 可以选择使用图片加载功能(复用的网络请求将有效减少apk体积)； 移除了原Volley的 HttpClient 相关 API ，可在 API23 环境编译； 内置了RxBus的实现，可有效替换掉EventBus等相关库；</p>
-</blockquote>
-<p>这是RxVolley的Gihub项目：<a href="https://github.com/kymjs/RxVolley" target="_blank" rel="external">RxVolley</a></p>
-<p>整个项目都没有用到一些架构的东西，代码也写得很乱，Fragment切换的时候还有些卡顿现象，这些在后面再解决吧<br>最近真的太忙了…</p>
-<p>下面是一些截图：</p>
-<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/picS60422-141808.jpg" alt="2"></p>
-<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/picS60422-141830.jpg" alt="1"></p>
-<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/picS60422-141822.jpg" alt="2"></p>
-<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/picS60422-141826.jpg" alt="2"></p>
-<p>最后贴上GitHub项目地址：<a href="https://github.com/addiz/MyLOL" target="_blank" rel="external">MyLOL</a></p>
-<p>代码在里面~~~~</p>
-<p>继续加油~~</p>
-
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/04/23/mylol-e8-8b-b1-e9-9b-84-e8-81-94-e7-9b-9f-e6-9f-a5-e8-af-a2-e5-b0-8f-e5-8a-a9-e6-89-8b/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
@@ -814,83 +597,6 @@ compile &apos;com.google.code.gson:gson:2.2.4&apos;
 	</div>
 
       
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-android-e4-b8-8b-sqlite-e6-95-b0-e6-8d-ae-e5-ba-93-e4-bd-bf-e7-94-a8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/28/android-e4-b8-8b-sqlite-e6-95-b0-e6-8d-ae-e5-ba-93-e4-bd-bf-e7-94-a8/">Android下--SQLite数据库使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;</p>
-<p>##SQLite简单介绍</p>
-<ol>
-<li>SQLite是一个轻量级的关系型数据库，运算速度快，占用资源少，很适合在移动设备上使用，支持标准SQL语法，遵循ACID(数据库事务)原则</li>
-<li><p>SQLite支持五中数据类型：NULL、INTEGER、REAL(浮点数)、TEXT(字符串文本)和BLOB(二进制文件)，其实对于varchar ，char等其他类型的数据也是可以保存的</p>
-<blockquote>
-<p>你可以各种数据类型的数据保存到任何字段中而不用关心字段声明的数据类型是什么,比如你 可以在Integer类型的字段中存放字符串,当然除了声明为主键INTEGER PRIMARY KEY的字段只能够存储64位整数！ 另外， SQLite 在解析CREATE TABLE 语句时， 会忽略 CREATE TABLE 语句中跟在字段名后面的数据类型信息如下面语句会忽略 name字段的类型信息： CREATE TABLE person (personid integer primary key autoincrement, name varchar(20))</p>
-</blockquote>
-</li>
-<li><p>SQlite通过文件来保存数据库，一个文件就是一个数据库，数据库中又包含多个表格，表格里又有 多条记录，每个记录由多个字段构成，每个字段有对应的值，每个值我们可以指定类型，也可以不指定 类型(主键除外)<br>##SQLite数据库相关的类</p>
-</li>
-</ol>
-<ul>
-<li>SQLiteOPenHelper：抽象类，通过继承该类，然后重写数据库创建以及更新方法，我们还可以通过该类的对象获取数据库实例，或者关闭数据库</li>
-<li>SQLiteDatabase:数据库访问类，可以通过该类的对象来对数据库做一些增删改查的操作</li>
-<li>Cursor:游标，类似于JDBC中的resultset，可以简单理解为指向数据库中某一记录的指针<br>同时写了个例子实现了创建数据库和读取数据库：</li>
-</ul>
-<p><a href="https://github.com/addiz/SQLiteDemo" target="_blank" rel="external">https://github.com/addiz/SQLiteDemo</a></p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/03/28/android-e4-b8-8b-sqlite-e6-95-b0-e6-8d-ae-e5-ba-93-e4-bd-bf-e7-94-a8/" class="archive-article-date">
-  	<time datetime="2016-03-28T08:46:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-28</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<i class="icon-price-tags"></i>
-	<a class="article-category-link" href="/categories/Android/">Android</a>
-	</div>
-
 
       <div class="clearfix"></div>
     </div>
@@ -972,7 +678,7 @@ compile &apos;com.google.code.gson:gson:2.2.4&apos;
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/Modern/" style="font-size: 15.71px;">Modern</a> <a href="/tags/addi/" style="font-size: 14.29px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 17.14px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.57px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 12.86px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.43px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     
