@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://addi.club">
+  <title>Android学习笔记-3 | Addi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Adapter:Adapter继承结构：
+
+&amp;nbsp;
+常用adapter:
+BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
+ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
+SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
+SimpleCursorAdapt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android学习笔记-3">
+<meta property="og:url" content="http://addi.club/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-3/index.html">
+<meta property="og:site_name" content="Addi的博客">
+<meta property="og:description" content="Adapter:Adapter继承结构：
+
+&amp;nbsp;
+常用adapter:
+BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
+ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
+SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
+SimpleCursorAdapt">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg">
+<meta property="og:updated_time" content="2016-11-27T07:15:19.245Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android学习笔记-3">
+<meta name="twitter:description" content="Adapter:Adapter继承结构：
+
+&amp;nbsp;
+常用adapter:
+BaseAdapter：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！
+ArrayAdapter：支持泛型操作，最简单的一个Adapter，只能展现一行文字~
+SimpleAdapter：同样具有良好扩展性的一个Adapter，可以自定义多种效果！
+SimpleCursorAdapt">
+<meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Addi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">念念不忘 必有回响</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/just">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Addi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Addi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">念念不忘 必有回响</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/just">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android学习笔记-3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter:"></a>Adapter:</h1><p>Adapter继承结构：</p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2015/09/77919389.jpg" alt=""></p>
+<p>&nbsp;</p>
+<h2 id="常用adapter"><a href="#常用adapter" class="headerlink" title="常用adapter:"></a><strong>常用adapter:</strong></h2><ul>
+<li><strong>BaseAdapter</strong>：抽象类，实际开发中我们会继承这个类并且重写相关方法，用得最多的一个Adapter！</li>
+<li><strong>ArrayAdapter</strong>：支持泛型操作，最简单的一个Adapter，只能展现一行文字~</li>
+<li><strong>SimpleAdapter</strong>：同样具有良好扩展性的一个Adapter，可以自定义多种效果！</li>
+<li><strong>SimpleCursorAdapter</strong>：用于显示简单文本类型的listView，一般在数据库那里会用到，不过有点过时， 不推荐使用！<br>&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<p>listview作为一个列表控件，他和普通的列表一样，可以自己设置表头与表尾： 以及分割线，可供我们设置的属性如下：</p>
+<ul>
+<li><strong>footerDividersEnabled</strong>：是否在footerView(表尾)前绘制一个分隔条,默认为true</li>
+<li><strong>headerDividersEnabled</strong>:是否在headerView(表尾)前绘制一个分隔条,默认为true</li>
+<li><strong>divider</strong>:设置分隔条,可以用颜色分割,也可以用drawable资源分割</li>
+<li><p><strong>dividerHeight</strong>:设置分隔条的高度<br>翻遍了了API发现并没有可以直接设置ListView表头或者表尾的属性，只能在Java中写代码 进行设置了，可供我们调用的方法如下：</p>
+</li>
+<li><p><strong>addHeaderView(View v)</strong>：添加headView(表头),括号中的参数是一个View对象</p>
+</li>
+<li><strong>addFooterView(View v)</strong>：添加footerView(表尾)，括号中的参数是一个View对象</li>
+<li><strong>addHeaderView(headView, null, false)</strong>：和前面的区别：设置Header是否可以被选中</li>
+<li><strong>addFooterView(View,view,false)</strong>：同上<br>对了，使用这个addHeaderView方法必须放在listview.setAdapter前面，否则会报错。</li>
+</ul>
+<p><span style="color: #ff0000;">注意：</span></p>
+<pre class="prettyprint prettyprinted"><span class="com">//添加表头和表尾需要写在setAdapter方法调用之前！！！</span><span class="pln">
+        list_animal</span><span class="pun">.</span><span class="pln">addHeaderView</span><span class="pun">(</span><span class="pln">headView</span><span class="pun">);</span><span class="pln">
+        list_animal</span><span class="pun">.</span><span class="pln">addFooterView</span><span class="pun">(</span><span class="pln">footView</span><span class="pun">);
+
+添加表头表尾后，我们发现positon是从表头开始算的，就是你添加的第一个数据本来的postion是 0，但是此时却变成了1，因为表头也算！！
+
+</span></pre>
+
+<h2 id="BaseAdapter优化："><a href="#BaseAdapter优化：" class="headerlink" title="BaseAdapter优化："></a>BaseAdapter优化：</h2><h2 id="1-复用ConvertView："><a href="#1-复用ConvertView：" class="headerlink" title="1.复用ConvertView："></a>1.复用ConvertView：</h2><p>inflate()每次都要加载一次xml，其实这个convertView是系统提供给我们的可供服用的View 的缓存对象，那就先判断view是否为空，为空才加载</p>
+<p>&nbsp;</p>
+<h2 id="2-ViewHolder重用组件："><a href="#2-ViewHolder重用组件：" class="headerlink" title="2.ViewHolder重用组件："></a>2.ViewHolder重用组件：</h2><pre class="prettyprint prettyprinted"><span class="kwd">static</span> <span class="kwd">class</span> <span class="typ">ViewHolder</span><span class="pun">{</span>
+  具体view中的控件例如
+  TextView XXX;
+<span class="pun">}
+一个例子：</span></pre>
+> <pre><span style="color: #ff0000;">ViewHolder holder = null;</span>
+> 
+> if(convertView==null) {
+> 
+>     convertView = LayoutInflater.from(mContext).inflate(R.layout.datalayout, parent, false);
+> 
+>    <span style="color: #ff0000;"> holder = new ViewHolder();</span>
+> 
+>    <span style="color: #ff0000;"> holder</span>.t1 = (TextView)convertView.findViewById(R.id.text1);
+> 
+>    <span style="color: #ff0000;"> holder</span>.t2= (TextView)convertView.findViewById(R.id.text2);
+> 
+>   <span style="color: #ff0000;">  convertView.setTag(holder);</span>
+> 
+> }else{
+> 
+>    <span style="color: #ff0000;"> holder = (ViewHolder)convertView.getTag();</span>
+> 
+> <span style="color: #ff0000;">}</span></pre>
+> 
+> <pre><span style="color: #ff0000;">holder</span>.t1.setText(mData.get(position).getName());
+> 
+> <span style="color: #ff0000;">holder</span>.t2.setText(mData.get(position).getAlbum());</pre>
+> 
+> <pre>return convertView;</pre>
+<pre class="prettyprint prettyprinted"><span class="pun"> </span></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-3/" class="archive-article-date">
+  	<time datetime="2016-01-31T18:40:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-01</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/02/01/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android学习笔记-4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/31/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android学习笔记-2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Addi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">hongyang大神</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gold.xitu.io/">掘金</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">关于我&lt;br&gt;&lt;br&gt;广东仔一枚，SCNU在读&lt;br&gt;&lt;br&gt;爱自由，希望世界和平&lt;br&gt;&lt;br&gt;略带文艺气质的Android程序员</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

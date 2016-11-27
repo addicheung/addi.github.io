@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://addi.club">
+  <title>android:clipToPadding和android:clipChildren | Addi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
+正常态：
+
+滚动态:
+
+乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android:clipToPadding和android:clipChildren">
+<meta property="og:url" content="http://addi.club/2016/06/13/androidcliptopadding-e5-92-8candroidclipchildren/index.html">
+<meta property="og:site_name" content="Addi的博客">
+<meta property="og:description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
+正常态：
+
+滚动态:
+
+乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+<meta property="og:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png">
+<meta property="og:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596831861410.png">
+<meta property="og:updated_time" content="2016-11-27T07:15:19.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android:clipToPadding和android:clipChildren">
+<meta name="twitter:description" content="假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：
+正常态：
+
+滚动态:
+
+乍一看，不是很简单吗，只要设置一下marginTop或者pad">
+<meta name="twitter:image" content="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Addi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">念念不忘 必有回响</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/just">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Addi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Addi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">念念不忘 必有回响</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/just">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-androidcliptopadding-e5-92-8candroidclipchildren" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      android:clipToPadding和android:clipChildren
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>假设我们要做一个效果，界面最顶部是一个ActionBar并且是半透明的,ActionBar下面是一个ListView，在初始状态 下，ListView是top是在ActionBar的bottom位置的，但当ListView滚动的时候可以透过ActionBar看到下面的 ListView的内容。如下面两张图所示：</p>
+<p><span id="more-5944"></span>正常态：</p>
+<p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596823136135.png" alt="normal"></p>
+<p>滚动态:</p>
+<p><img src="http://www.jcodecraeer.com/uploads/20150317/1426596831861410.png" alt="scroll"></p>
+<p>乍一看，不是很简单吗，只要设置一下marginTop或者p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop就可以了，但问题是只用这两个其中一个属性的话，ListView 滑动的时候就不能滚到p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ngTop或者marginTop那部分区域，有人说可以用HeaderView来解决，这是其中一个办法，但仅仅了为这 个占空使用HeadView有点浪费而且会影响onItemClick的position.于是这里介绍可以到这个效果的两个属性，就是 <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipToP<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng和<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>:clipChildren,这两个属性不是太多人用到，这里说明一下</p>
+<p>clipToP<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng就是说控件的绘制区域是否在p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng里面的，true的情况下如果你设置了p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng那么绘制的区域就往里 缩，clipChildren是指子控件是否超过p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng区域，这两个属性默认是true的，所以在设置了p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng情况下，默认滚动是在 p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng内部的，要达到上面的效果主要把这两个属性设置了false那么这样子控件就能画到p<a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a>ng的区域了。</p>
+<p><div></div></p>
+<p><div id="highlighter_46881" class="syntaxhighlighter  js"></div></p>
+<p><table border="0" cellspacing="0" cellpadding="0"></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><div class="line number1 index0 alt2">1</div></p>
+<p><div class="line number2 index1 alt1">2</div></p>
+<p><div class="line number3 index2 alt2">3</div></p>
+<p><div class="line number4 index3 alt1">4</div></p>
+<p><div class="line number5 index4 alt2">5</div></p>
+<p><div class="line number6 index5 alt1">6</div></p>
+<p><div class="line number7 index6 alt2">7</div></p>
+<p><div class="line number8 index7 alt1">8</div></p>
+<p><td class="code"></td></p>
+<p><div class="container"></div></p>
+<p><div class="line number1 index0 alt2"><code>&amp;lt;ListView</code></div></p>
+<p><div class="line number2 index1 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_gravity=``&quot;center_vertical&quot;</code></div></p>
+<p><div class="line number3 index2 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):id=``&quot;@+id/list&quot;</code></div></p>
+<p><div class="line number4 index3 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):clipChildren=``&quot;false&quot;</code></div></p>
+<p><div class="line number5 index4 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):clipToP[addi](http://www.alimodern.com/tag/addi &quot;addi&quot;)ng=``&quot;false&quot;</code></div></p>
+<p><div class="line number6 index5 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):p[addi](http://www.alimodern.com/tag/addi &quot;addi&quot;)ngTop=``&quot;50dip&quot;</code></div></p>
+<p><div class="line number7 index6 alt2"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_width=``&quot;match_parent&quot;</code></div></p>
+<p><div class="line number8 index7 alt1"><code>``[android](http://www.alimodern.com/tag/android &quot;android&quot;):layout_height=``&quot;match_parent&quot;``&amp;gt;</code></div><br><br><br><br><br><br><br>Actionbar半透明就不详细说了，只要设置actionbarOverlay为true并为ActionBar设置一个半透明的background即可.</p>
+<p>这个属性<code>RecyclerView</code>也有，是同样的意思。</p>
+<p>&nbsp;</p>
+<p>转载自：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0317/2613.html" target="_blank" rel="external">泡在网上的日子</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/06/13/androidcliptopadding-e5-92-8candroidclipchildren/" class="archive-article-date">
+  	<time datetime="2016-06-13T04:51:09.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-06-13</time>
+</a>
+      
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/09/22/android-5-0-button-e6-8c-89-e9-92-ae-e6-b0-b4-e7-ba-b9-e6-95-88-e6-9e-9c-e7-9a-84-e9-80-82-e9-85-8d-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e8-87-aa-e5-ae-9a-e4-b9-89button-e9-a2-9c-e8-89-b2-e6-97-b6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android 5.0 Button 按钮水纹效果的适配问题-解决自定义button颜色时水波纹的显示
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/25/e5-88-a9-e7-94-a8abd-e5-91-bd-e4-bb-a4-e5-ae-9e-e7-8e-b0-e7-b1-bb-e4-bc-bcandroid-e6-8c-89-e9-94-ae-e7-b2-be-e7-81-b5-e7-9a-84-e5-8a-9f-e8-83-bd/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用ABD命令实现类似Android按键精灵的功能</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Addi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">hongyang大神</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gold.xitu.io/">掘金</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">关于我&lt;br&gt;&lt;br&gt;广东仔一枚，SCNU在读&lt;br&gt;&lt;br&gt;爱自由，希望世界和平&lt;br&gt;&lt;br&gt;略带文艺气质的Android程序员</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://addi.club">
+  <title>异步加载深入 | Addi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="提高用户体验—-使用缓存
+Lru算法
+
+Lru：Least Recently Used 近期最少使用算法
+Android提供了LruCache类来实现这个算法
+
+
+以内存换率以下奉上在慕课网中学习到的线程加载图片和异步任务加载图片加上缓存机制的代码：
+/**
+
+Created by addi on 2016/3/13 0013.*/public class ImageLoader {
+
+priva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异步加载深入">
+<meta property="og:url" content="http://addi.club/2016/03/14/e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5/index.html">
+<meta property="og:site_name" content="Addi的博客">
+<meta property="og:description" content="提高用户体验—-使用缓存
+Lru算法
+
+Lru：Least Recently Used 近期最少使用算法
+Android提供了LruCache类来实现这个算法
+
+
+以内存换率以下奉上在慕课网中学习到的线程加载图片和异步任务加载图片加上缓存机制的代码：
+/**
+
+Created by addi on 2016/3/13 0013.*/public class ImageLoader {
+
+priva">
+<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异步加载深入">
+<meta name="twitter:description" content="提高用户体验—-使用缓存
+Lru算法
+
+Lru：Least Recently Used 近期最少使用算法
+Android提供了LruCache类来实现这个算法
+
+
+以内存换率以下奉上在慕课网中学习到的线程加载图片和异步任务加载图片加上缓存机制的代码：
+/**
+
+Created by addi on 2016/3/13 0013.*/public class ImageLoader {
+
+priva">
+  
+    <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Addi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">念念不忘 必有回响</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/just">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Addi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Addi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">念念不忘 必有回响</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/just">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      异步加载深入
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="提高用户体验—-使用缓存"><a href="#提高用户体验—-使用缓存" class="headerlink" title="提高用户体验—-使用缓存"></a>提高用户体验—-使用缓存</h2><ul>
+<li><p>Lru<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></p>
+<ul>
+<li>Lru：Least Recently Used 近期最少使用<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></li>
+<li>Android提供了LruCache类来实现这个<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></li>
+</ul>
+</li>
+<li><p>以内存换率<br>以下奉上在慕课网中学习到的线程加载图片和异步任务加载图片加上缓存机制的代码：</p>
+<p>/**</p>
+<ul>
+<li>Created by addi on 2016/3/13 0013.<br>*/<br>public class ImageLoader {</li>
+</ul>
+<p>private ImageView tampView;  //暂存iamgeView<br>private  String mURL;<br>private LruCache&lt;String,Bitmap&gt; mCaches;//缓存</p>
+<p>/**</p>
+<ul>
+<li>构造函数<br>*/<br>public  ImageLoader(){<br> int maxSize = (int) Runtime.getRuntime().maxMemory();<br> int cacheSize = maxSize/4;<br> //初始化Lru缓存<br> mCaches = new LruCache&lt;String,Bitmap&gt;(cacheSize){<pre><code>@Override
+protected int sizeOf(String key, Bitmap value) {
+    return value.getByteCount();
+}
+</code></pre> };<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>线程方式加载图片时用于更新UI的Handler<br>*/<br>private Handler handler = new Handler(){<br> @Override<br> public void handleMessage(Message msg) {<pre><code>super.handleMessage(msg);
+if(tampView.getTag().equals(mURL))
+tampView.setImageBitmap((Bitmap) msg.obj);
+</code></pre> }<br>};</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>线程方式<br>*/<br>public void getImage(ImageView image, final String url){<br> tampView = image;<br> mURL = url;<br> new Thread(){<pre><code>@Override
+public void run() {
+    super.run();
+    Bitmap bitmap = getBitmapFromURL(url);
+    Message message =Message.obtain();
+    message.obj = bitmap;
+    handler.sendMessage(message);
+}
+</code></pre> }.start();<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>从网络中获取图片</li>
+<li>@param url</li>
+<li>@return</li>
+<li>@throws IOException<br>*/<br>public Bitmap getBitmapFromURL(String url) {<br> Bitmap bitmap;<br> InputStream is = null;<br> try {<pre><code>HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+is = new BufferedInputStream(conn.getInputStream());
+bitmap = BitmapFactory.decodeStream(is);
+conn.disconnect();
+return bitmap;
+</code></pre> } catch (IOException e) {<pre><code>e.printStackTrace();
+</code></pre> }finally{<pre><code>try {
+    is.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre> }<br> return null;<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>将图片添加到缓存</li>
+<li>注意：要先判读缓存中市是否已经存在这个图片</li>
+<li>@param key</li>
+<li>@param bitmap<br>*/<br>private void addBitmapToCache(String key,Bitmap bitmap){<br> if(mCaches.get(key) == null){<pre><code>mCaches.put(key,bitmap);
+</code></pre> }<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>根据key值从缓存中获取图片</li>
+<li>@param key</li>
+<li>@return<br>*/<br>private Bitmap getBitmapFromCache(String key){<br> return mCaches.get(key);<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>异步任务方式加载图片</li>
+<li>@param imageView</li>
+<li>@param url<br>*/</li>
+</ul>
+<p>public void showImageByAsyncTask(ImageView imageView,String url){</p>
+<pre><code>Bitmap bitmap =  getBitmapFromCache(url);
+if(bitmap==null) {
+    new ImageAsyncTask(imageView, url).execute(url); //缓存中没有图片，启动异步任务获取
+}else {
+    imageView.setImageBitmap(bitmap);       //缓存中存在直接设置图片
+}
+</code></pre><p>}</p>
+<p>/**</p>
+<ul>
+<li><p>异步任务类<br>*/<br>//后：：添加缓存机制到异步任务中<br>class ImageAsyncTask extends AsyncTask&lt;String,Void,Bitmap&gt;{</p>
+<p>private ImageView imageView;<br>private String url;</p>
+<p>public ImageAsyncTask(ImageView imageView, String url) {<br> this.imageView = imageView;<br> this.url = url;<br>}</p>
+<p>@Override<br>protected Bitmap doInBackground(String… params) {<br> //从网络中获取图片<br> Bitmap bitmap = getBitmapFromURL(params[0]);<br> String url = params[0];<br> if(bitmap!=null){</p>
+<pre><code>addBitmapToCache(url,bitmap); //将图片加至缓存中
+</code></pre><p> }<br> return bitmap;<br>}</p>
+<p>@Override<br>protected void onPostExecute(Bitmap bitmap) {<br> super.onPostExecute(bitmap);<br> if(imageView.getTag().equals(url))<br> imageView.setImageBitmap(bitmap);<br>}<br>}</p>
+</li>
+</ul>
+<p>}</p>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/14/e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5/" class="archive-article-date">
+  	<time datetime="2016-03-14T03:15:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-14</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/15/android-studio-e4-b8-8b-e5-bb-ba-e7-ab-8bassets-e6-96-87-e4-bb-b6-e5-a4-b9-e6-96-b9-e6-b3-95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android Studio下建立assets目录方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/13/e5-ad-a6-e4-b9-a0android-e5-bc-82-e6-ad-a5-e4-bb-bb-e5-8a-a1-asynctask/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习Android异步任务-AsyncTask</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Addi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">hongyang大神</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gold.xitu.io/">掘金</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">关于我&lt;br&gt;&lt;br&gt;广东仔一枚，SCNU在读&lt;br&gt;&lt;br&gt;爱自由，希望世界和平&lt;br&gt;&lt;br&gt;略带文艺气质的Android程序员</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

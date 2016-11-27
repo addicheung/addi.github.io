@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://addi.club">
+  <title>Addi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="想成为一名很吊的Android程序猿">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Addi的博客">
+<meta property="og:url" content="http://addi.club/page/2/index.html">
+<meta property="og:site_name" content="Addi的博客">
+<meta property="og:description" content="想成为一名很吊的Android程序猿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Addi的博客">
+<meta name="twitter:description" content="想成为一名很吊的Android程序猿">
+  
+    <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Addi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">念念不忘 必有回响</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/just">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Addi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Addi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">念念不忘 必有回响</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/just">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        
+  
+    <article id="post-adnroid-e8-87-aa-e5-ae-9a-e4-b9-89view-e5-b0-8f-e7-bb-83-e4-b9-a0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/20/adnroid-e8-87-aa-e5-ae-9a-e4-b9-89view-e5-b0-8f-e7-bb-83-e4-b9-a0/">Adnroid自定义View小练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这今天准备学习一下自定义VIew方面的内容</p>
+<p>在简书上看到了一篇文章讲自定义view的觉得很不错(<a href="http://www.jianshu.com/p/11210b14f743" target="_blank" rel="external">传送门</a>)</p>
+<p>于是看完文章后就写了一个小demo,原文介绍挺详细，里面还有一些东西我还需要去学习</p>
+<p>这个demo主要是写了两个方法，drawBigCircle和drawBall两个分别实现画圆环和圆球，再定义了一个执行动画的方法，其中动画用到了ValueAnimator（<a href="http://www.runoob.com/w3cnote/android-tutorial-valueanimator.html" target="_blank" rel="external">ValueAnimator用法</a>）</p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<p>以下为代码：</p>
+<p>View代码</p>
+<pre><code>public class CIrcleView extends View{
+private ValueAnimator animator;
+float angle = 0;
+private Paint mCirclePaint;
+private Paint mBallPaint;
+
+public CIrcleView(Context context) {
+    this(context,null);
+}
+
+public CIrcleView(Context context, AttributeSet attrs) {
+    this(context, attrs,0);
+}
+
+public CIrcleView(Context context, AttributeSet attrs, int defStyleAttr) {
+
+    super(context, attrs, defStyleAttr);
+    init();
+}
+
+@Override
+protected void onDraw(Canvas canvas) {
+    drawBigCircle(canvas);
+    drawBall(canvas);
+
+}
+
+private void drawBigCircle(Canvas canvas){
+    canvas.drawCircle(500.0f,500.0f,200,mCirclePaint);
+}
+
+private void drawBall(Canvas canvas){
+
+    double anglethis = Math.PI /180*angle;
+    float y = (float) (Math.sin(anglethis)*200);
+    float x = (float) (Math.cos(anglethis)*200);
+    int count = canvas.save();
+    canvas.translate(500f,500f);
+    canvas.drawCircle(x,y,20,mBallPaint);
+    canvas.restoreToCount(count);
+}
+
+private void init() {
+    mCirclePaint = new Paint();
+    mCirclePaint.setAntiAlias(true);
+    mCirclePaint.setStyle(Paint.Style.STROKE);
+    mCirclePaint.setStrokeWidth(15.0f);
+    mCirclePaint.setColor(getResources().getColor(R.color.colorAccent));
+
+    mBallPaint = new Paint();
+    mBallPaint.setAntiAlias(true);
+    mBallPaint.setStyle(Paint.Style.FILL);
+    mBallPaint.setColor(getResources().getColor(R.color.colorAccent));
+
+}
+
+@Override
+protected void onAttachedToWindow() {
+    super.onAttachedToWindow();
+    startAnimation();
+}
+
+@Override
+public void setVisibility(int visibility) {
+    if (visibility == INVISIBLE || visibility == GONE){
+    }else {
+        clearAnimation();
+        //startAnimation();
+    }
+    super.setVisibility(visibility);
+}
+
+private void startAnimation() {
+    AccTypeEvaluator acc = new AccTypeEvaluator();
+    animator = ValueAnimator.ofObject(acc,0.0f,360.0f);
+    animator.setDuration(2000);
+    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            Float f = (Float) animation.getAnimatedValue();
+            angle = f;
+            invalidate();
+        }
+    });
+
+    animator.setRepeatCount(ValueAnimator.INFINITE);
+    animator.start();
+}
+}
+`&lt;/pre&gt;
+TypeEvaluator计算器：
+&lt;pre&gt;`public class AccTypeEvaluator implements TypeEvaluator&amp;lt;Float&amp;gt; {
+
+@Override
+public Float evaluate(float fraction, Float startValue, Float endValue) {
+
+    Log.d(&quot;&quot;, &quot; current fraction == &quot; + fraction);
+    return fraction*(endValue-startValue);
+
+}
+</code></pre><p>}</p>
+<p>效果图：</p>
+<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/gg.gif" alt="demo.gif"></p>
+<p>继续努力-U-</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/20/adnroid-e8-87-aa-e5-ae-9a-e4-b9-89view-e5-b0-8f-e7-bb-83-e4-b9-a0/" class="archive-article-date">
+  	<time datetime="2016-03-19T16:03:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-20</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-recyclerview-e5-ad-a6-e4-b9-a0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/recyclerview-e5-ad-a6-e4-b9-a0/">RecyclerView 学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="RecyclerView介绍"><a href="#RecyclerView介绍" class="headerlink" title="RecyclerView介绍"></a>RecyclerView介绍</h2><ul>
+<li>RecyclerView重点是关注如何回收和复用View</li>
+<li>它不关心Item是否是显示在正确的位置，如何显示</li>
+<li>不关心Item之间是如何分隔的</li>
+<li>不关注Item增加与删除的动画效果</li>
+</ul>
+<h2 id="RecyclerView相关的重要类"><a href="#RecyclerView相关的重要类" class="headerlink" title="RecyclerView相关的重要类"></a>RecyclerView相关的重要类</h2><ul>
+<li>Adapter</li>
+<li>ViewHolder</li>
+<li>LayoutManager（用于控制RecyclerView的显示风格）</li>
+<li>ItemDecoration（控制风格效果）</li>
+<li>ItemAnimator（控制Item内部增删的动画效果）</li>
+</ul>
+<h2 id="如何在项目中加入RecyclerView"><a href="#如何在项目中加入RecyclerView" class="headerlink" title="如何在项目中加入RecyclerView"></a>如何在项目中加入RecyclerView</h2><p>在Android Studio下依次点击: File—&gt;Project Structure—&gt;app(Moudles栏下)—&gt;Dependencies(在最右边)—&gt; 点击绿色+号 ,然后搜索RecyclerView选取加入即可</p>
+<p>图片示例：</p>
+<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/img316.png" alt="实例"></p>
+<p>&nbsp;</p>
+<p>具体使用方法我就不写啦，网上也有很多文章</p>
+<p>这里有一篇可以参考：<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2014/1118/2004.html" target="_blank" rel="external">RecyclerView使用介绍</a></p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/16/recyclerview-e5-ad-a6-e4-b9-a0/" class="archive-article-date">
+  	<time datetime="2016-03-16T14:19:51.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-16</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-studio-e4-b8-8b-e5-bb-ba-e7-ab-8bassets-e6-96-87-e4-bb-b6-e5-a4-b9-e6-96-b9-e6-b3-95" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/android-studio-e4-b8-8b-e5-bb-ba-e7-ab-8bassets-e6-96-87-e4-bb-b6-e5-a4-b9-e6-96-b9-e6-b3-95/">Android Studio下建立assets目录方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天继续写demo</p>
+<p>但是添加自定义字体的时候找不assets目录</p>
+<p>很是郁闷~~~</p>
+<p>于是又得到google上查找解决办法</p>
+<p>根据大神解释是这样的：</p>
+<blockquote>
+<p>Since Android Studio uses the new Gradle-based build system, you should be putting assets/ inside of the source sets (e.g., src/main/assets/), if I understand correctly.<br>意思就是Android Studio采用了新的Gradle构建系统，你要自己建一个assets目录，其中<br>路径必须是： src/main/assets/</p>
+</blockquote>
+<p>所以在Android studio中你得先切换至项目（project）视图，然后找到对应路径，再新建一个assets文件夹。</p>
+<p>&nbsp;</p>
+<p>办法来自<a href="http://stackoverflow.com/questions/18302603/where-to-place-assets-folder-in-android-studio" target="_blank" rel="external">stackoverflow</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/15/android-studio-e4-b8-8b-e5-bb-ba-e7-ab-8bassets-e6-96-87-e4-bb-b6-e5-a4-b9-e6-96-b9-e6-b3-95/" class="archive-article-date">
+  	<time datetime="2016-03-15T07:23:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-15</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/14/e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5/">异步加载深入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="提高用户体验—-使用缓存"><a href="#提高用户体验—-使用缓存" class="headerlink" title="提高用户体验—-使用缓存"></a>提高用户体验—-使用缓存</h2><ul>
+<li><p>Lru<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></p>
+<ul>
+<li>Lru：Least Recently Used 近期最少使用<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></li>
+<li>Android提供了LruCache类来实现这个<a href="http://www.alimodern.com/tag/algorithm" title="算法" target="_blank" rel="external">算法</a></li>
+</ul>
+</li>
+<li><p>以内存换率<br>以下奉上在慕课网中学习到的线程加载图片和异步任务加载图片加上缓存机制的代码：</p>
+<p>/**</p>
+<ul>
+<li>Created by addi on 2016/3/13 0013.<br>*/<br>public class ImageLoader {</li>
+</ul>
+<p>private ImageView tampView;  //暂存iamgeView<br>private  String mURL;<br>private LruCache&lt;String,Bitmap&gt; mCaches;//缓存</p>
+<p>/**</p>
+<ul>
+<li>构造函数<br>*/<br>public  ImageLoader(){<br> int maxSize = (int) Runtime.getRuntime().maxMemory();<br> int cacheSize = maxSize/4;<br> //初始化Lru缓存<br> mCaches = new LruCache&lt;String,Bitmap&gt;(cacheSize){<pre><code>@Override
+protected int sizeOf(String key, Bitmap value) {
+    return value.getByteCount();
+}
+</code></pre> };<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>线程方式加载图片时用于更新UI的Handler<br>*/<br>private Handler handler = new Handler(){<br> @Override<br> public void handleMessage(Message msg) {<pre><code>super.handleMessage(msg);
+if(tampView.getTag().equals(mURL))
+tampView.setImageBitmap((Bitmap) msg.obj);
+</code></pre> }<br>};</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>线程方式<br>*/<br>public void getImage(ImageView image, final String url){<br> tampView = image;<br> mURL = url;<br> new Thread(){<pre><code>@Override
+public void run() {
+    super.run();
+    Bitmap bitmap = getBitmapFromURL(url);
+    Message message =Message.obtain();
+    message.obj = bitmap;
+    handler.sendMessage(message);
+}
+</code></pre> }.start();<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>从网络中获取图片</li>
+<li>@param url</li>
+<li>@return</li>
+<li>@throws IOException<br>*/<br>public Bitmap getBitmapFromURL(String url) {<br> Bitmap bitmap;<br> InputStream is = null;<br> try {<pre><code>HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+is = new BufferedInputStream(conn.getInputStream());
+bitmap = BitmapFactory.decodeStream(is);
+conn.disconnect();
+return bitmap;
+</code></pre> } catch (IOException e) {<pre><code>e.printStackTrace();
+</code></pre> }finally{<pre><code>try {
+    is.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre> }<br> return null;<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>将图片添加到缓存</li>
+<li>注意：要先判读缓存中市是否已经存在这个图片</li>
+<li>@param key</li>
+<li>@param bitmap<br>*/<br>private void addBitmapToCache(String key,Bitmap bitmap){<br> if(mCaches.get(key) == null){<pre><code>mCaches.put(key,bitmap);
+</code></pre> }<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>根据key值从缓存中获取图片</li>
+<li>@param key</li>
+<li>@return<br>*/<br>private Bitmap getBitmapFromCache(String key){<br> return mCaches.get(key);<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>异步任务方式加载图片</li>
+<li>@param imageView</li>
+<li>@param url<br>*/</li>
+</ul>
+<p>public void showImageByAsyncTask(ImageView imageView,String url){</p>
+<pre><code>Bitmap bitmap =  getBitmapFromCache(url);
+if(bitmap==null) {
+    new ImageAsyncTask(imageView, url).execute(url); //缓存中没有图片，启动异步任务获取
+}else {
+    imageView.setImageBitmap(bitmap);       //缓存中存在直接设置图片
+}
+</code></pre><p>}</p>
+<p>/**</p>
+<ul>
+<li><p>异步任务类<br>*/<br>//后：：添加缓存机制到异步任务中<br>class ImageAsyncTask extends AsyncTask&lt;String,Void,Bitmap&gt;{</p>
+<p>private ImageView imageView;<br>private String url;</p>
+<p>public ImageAsyncTask(ImageView imageView, String url) {<br> this.imageView = imageView;<br> this.url = url;<br>}</p>
+<p>@Override<br>protected Bitmap doInBackground(String… params) {<br> //从网络中获取图片<br> Bitmap bitmap = getBitmapFromURL(params[0]);<br> String url = params[0];<br> if(bitmap!=null){</p>
+<pre><code>addBitmapToCache(url,bitmap); //将图片加至缓存中
+</code></pre><p> }<br> return bitmap;<br>}</p>
+<p>@Override<br>protected void onPostExecute(Bitmap bitmap) {<br> super.onPostExecute(bitmap);<br> if(imageView.getTag().equals(url))<br> imageView.setImageBitmap(bitmap);<br>}<br>}</p>
+</li>
+</ul>
+<p>}</p>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/14/e5-bc-82-e6-ad-a5-e5-8a-a0-e8-bd-bd-e6-b7-b1-e5-85-a5/" class="archive-article-date">
+  	<time datetime="2016-03-14T03:15:03.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-14</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-e5-ad-a6-e4-b9-a0android-e5-bc-82-e6-ad-a5-e4-bb-bb-e5-8a-a1-asynctask" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/e5-ad-a6-e4-b9-a0android-e5-bc-82-e6-ad-a5-e4-bb-bb-e5-8a-a1-asynctask/">学习Android异步任务-AsyncTask</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="异步任务-AsyncTask"><a href="#异步任务-AsyncTask" class="headerlink" title="异步任务-AsyncTask"></a>异步任务-AsyncTask</h1><hr>
+<ul>
+<li><strong>构建Async子类的参数</strong><br>AsyncTask&lt;Params,Progress,Result&gt;是一个抽象类<br>通常用于被继承，继承AsyncTask需要指定以下三个泛型参数:</li>
+</ul>
+<ol>
+<li>Params: 启动任务时输入参数的类型。</li>
+<li>Progress:后台任务执行中返回进度值的类型</li>
+<li>Result: 后台执行任务完成后返回结果类型<br>-</li>
+</ol>
+<ul>
+<li><p><strong>构建AsyncTask子类的回调方法</strong></p>
+<ul>
+<li>doinBackground: 必须重写，移步执行后台线程将要完成的任务</li>
+<li>doPreExecute: 执行后台耗时操作前被调用，通常用户完成一些初始化操作</li>
+<li>onPostExecute: 当doinBackground()完成后，系统会调用onPostExecute()方法，并将doinBackground()方法返回的值传给该方法</li>
+<li>onProgressUpdate: doInBackground()方法中调用publicProgress()方法，更新任务的执行进度后，就会触发该方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>展示一个实例异步加载图片的操作，以及进度条更新的操作：</p>
+<p>activity_main.xml:就是一个button很简单</p>
+<pre><code>&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+&amp;lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+android:paddingTop=&quot;10dp&quot;
+tools:context=&quot;club.addi.asynctaskdemo.MainActivity&quot;&amp;gt;
+
+&amp;lt;Button
+    android:id=&quot;@+id/btn1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;加载图片&quot;
+    android:textSize=&quot;20sp&quot;
+    /&amp;gt;
+`&lt;/pre&gt;
+接下来是MainActivity.[java](http://www.alimodern.com/tag/java &quot;java&quot;)代码: 获取button实例添加监听事件
+&lt;pre&gt;`public class MainActivity extends AppCompatActivity {
+
+private Button btn;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    btn = (Button) findViewById(R.id.btn1);
+    btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this,LoadImage.class));
+        }
+    });
+} 
+} 
+`&lt;/pre&gt;
+下面是activity_load_iamge.xml:
+&lt;pre&gt;`&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+&amp;lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+tools:context=&quot;club.addi.asynctaskdemo.LoadImage&quot;&amp;gt;
+
+&amp;lt;ImageView
+    android:id=&quot;@+id/image1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    /&amp;gt;
+
+&amp;lt;ProgressBar
+    android:id=&quot;@+id/progress&quot;
+    android:visibility=&quot;gone&quot;
+    style=&quot;@style/Base.Widget.AppCompat.ProgressBar.Horizontal&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_centerInParent=&quot;true&quot;
+    /&amp;gt;
+
+&amp;lt;/RelativeLayout&amp;gt;
+`&lt;/pre&gt;
+接着是LoadImage.[java](http://www.alimodern.com/tag/java &quot;java&quot;)
+&lt;pre&gt;`public class LoadImage extends AppCompatActivity {
+
+private ImageView imageView;
+private ProgressBar progressBar;
+private static final  String IMAGE_URL =
+        &quot;http://cdnq.duitang.com/uploads/item/201412/17/20141217131537_v3ExX.jpeg&quot;;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_load_image);
+    initView();
+    ImageTask task = new ImageTask();
+    task.execute(IMAGE_URL);
+}
+
+private void initView() {
+    imageView = (ImageView) findViewById(R.id.image1);
+    progressBar = (ProgressBar) findViewById(R.id.progress);
+    progressBar.setMax(50);
+}
+
+class ImageTask extends AsyncTask&amp;lt;String,Integer,Bitmap&amp;gt;{
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected Bitmap doInBackground(String... params) {
+        Bitmap bitmap ;
+        String url = params[0];
+        URLConnection conn ;
+        InputStream is;
+        try {
+            conn =  new URL(url).openConnection();
+
+            is = conn.getInputStream();
+
+            BufferedInputStream buffer = new BufferedInputStream(is);
+            for(int i = 0;i&amp;lt;50;i++){
+                Thread.sleep(50);
+                publishProgress(i);
+            }
+
+            bitmap = BitmapFactory.decodeStream(buffer);
+            return bitmap;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(Bitmap bitmap) {
+        super.onPostExecute(bitmap);
+        progressBar.setVisibility(View.INVISIBLE);
+        imageView.setImageBitmap(bitmap);
+
+    }
+
+    @Override
+    protected void onProgressUpdate(Integer... values) {
+        super.onProgressUpdate(values);
+        progressBar.setProgress(values[0]);
+    }
+}
+}
+</code></pre><blockquote>
+<p>LoadImage.<a href="http://www.alimodern.com/tag/java" title="java" target="_blank" rel="external">java</a>说明，新建一个AsyncTask,在doInBackground方法中，实现图片的加载和进度条进度的更新<br>-</p>
+</blockquote>
+<p>显示：</p>
+<p><img src="http://7xkj8e.com1.z0.glb.clouddn.com/3-13.png" alt="显示"></p>
+<h3 id="以下注意事项来自：慕课网"><a href="#以下注意事项来自：慕课网" class="headerlink" title="以下注意事项来自：慕课网"></a>以下注意事项来自：<a href="http://www.imooc.com/video/7314" target="_blank" rel="external">慕课网</a></h3><p>使用AsyncTask的注意事项</p>
+<p>① 必须在UI线程中创建AsyncTask的实例.</p>
+<p>② 只能在UI线程中调用AsyncTask的execute方法.</p>
+<p>③ AsyncTask被重写的四个方法是系统自动调用的,不应手动调用.</p>
+<p>④ 每个AsyncTask只能被执行(execute方法)一次,多次执行将会引发异常.</p>
+<p>⑤ AsyncTask的四个方法,只有doInBackground方法是运行在其他线程中,其他三个方法都运行在UI线程中,也就说其他三个方法都可以进行UI的更新操作.</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/13/e5-ad-a6-e4-b9-a0android-e5-bc-82-e6-ad-a5-e4-bb-bb-e5-8a-a1-asynctask/" class="archive-article-date">
+  	<time datetime="2016-03-13T04:57:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-13</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/">Android Studio下自定义命名空间出现的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在练习一个界面的demo时遇到了报错，觉得好奇怪，自己写出来的代码基本上和大神给出的是一样的，但是就是会报错。</p>
+<p>后来到stack overflow上获取一些帮助，我使用的IDE是Android Studio ,发现是因为自定义命名空间的问题。</p>
+<p>报错：</p>
+<p><img src="http://source.alimodern.com/wp-content/uploads/2016/03/1.png" alt="错误"></p>
+<hr>
+<p>出现这个问题是因为<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a> studio引入的gradle脚本造成差异。</p>
+<p>在这里引用其他文章中的一段话</p>
+<blockquote>
+<p>在eclipse中如果要使用你自定义的属性 是不能用res-auto的 必须得替换成你自定义view所属的包名，如果你在恰好使用的自定义属性被做成了lib 那就只能使用res-auto了，而在<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>-studio里，无论你是自己写自定义view 还是引用的lib里的自定义的view 都只能使用res-auto这个写法。以前那个包名的写法 在<a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>-studio里是被废弃无法使用的。<br>所以得写成这样：</p>
+</blockquote>
+<p><img src="http://source.alimodern.com/wp-content/uploads/2016/03/2.png" alt="正确"></p>
+<p>Mark~</p>
+<p>3/11/2016 9:36:12 PM</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/11/android-studio-e4-b8-8b-e8-87-aa-e5-ae-9a-e4-b9-89-e5-91-bd-e5-90-8d-e7-a9-ba-e9-97-b4-e5-87-ba-e7-8e-b0-e7-9a-84-e9-97-ae-e9-a2-98/" class="archive-article-date">
+  	<time datetime="2016-03-11T13:42:02.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-11</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-13/">Android学习笔记-13</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Pull解析和生成xml："><a href="#Pull解析和生成xml：" class="headerlink" title="Pull解析和生成xml："></a>Pull解析和生成xml：</h3><h3 id="解析xml流程："><a href="#解析xml流程：" class="headerlink" title="解析xml流程："></a>解析xml流程：</h3><p><img src="http://www.runoob.com/wp-content/uploads/2015/09/68554165.jpg" alt=""></p>
+<p>&nbsp;</p>
+<p><strong>使用Pull生成xml数据的流程</strong>:</p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2015/09/69350628.jpg" alt=""></p>
+<p>&nbsp;</p>
+<p>图片来源：<a href="http://www.runoob.com/w3cnote/android-tutorial-xml.html" target="_blank" rel="external">菜鸟教程</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/03/02/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-13/" class="archive-article-date">
+  	<time datetime="2016-03-02T02:26:39.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-03-02</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android笔记/">android笔记</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-sharedpreferences-e5-b7-a5-e5-85-b7-e7-b1-bbfor-android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/29/sharedpreferences-e5-b7-a5-e5-85-b7-e7-b1-bbfor-android/">SharedPreferences工具类for Android</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p>
+<p>import <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.content.Context;<br>import <a href="http://www.alimodern.com/tag/android" title="android" target="_blank" rel="external">android</a>.content.SharedPreferences;</p>
+<p>import <a href="http://www.alimodern.com/tag/java" title="java" target="_blank" rel="external">java</a>.util.Map;</p>
+<p>/**</p>
+<ul>
+<li>Created by <a href="http://www.alimodern.com/tag/addi" title="addi" target="_blank" rel="external">addi</a> on 2016/2/29 0029.</li>
+<li>sharepreferences工具类<br><em>/<br>public class SPUtils {<br>/*</em></li>
+<li>保存在手机里面的sp文件名<br>*/<br>public static final String FILE_NAME = “my_sp”;</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>保存数据<br>*/<br>public static void put(Context context,String key, Object obj){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>if(obj instanceof Boolean){<br>editor.putBoolean(key,(Boolean) obj);<br>}<br>if(obj instanceof Float){<br>editor.putFloat(key,(Float)obj);<br>}<br>if (obj instanceof Integer){<br>editor.putInt(key,(Integer)obj);<br>}<br>if(obj instanceof Long){<br>editor.putLong(key,(Long)obj);<br>}<br>if(obj instanceof String){<br>editor.putString(key,(String)obj);<br>}<br>editor.commit();<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>获取指定数据<br>*/<br>public static Object get(Context context,String key,Object defaultObj){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>if(defaultObj instanceof Boolean){<br>return sp.getBoolean(key,(Boolean)defaultObj);<br>}<br>if(defaultObj instanceof Float){<br>return sp.getFloat(key,(Float)defaultObj);<br>}<br>if(defaultObj instanceof Integer){<br>return sp.getInt(key,(Integer)defaultObj);<br>}<br>if(defaultObj instanceof Long){<br>return sp.getLong(key,(Long)defaultObj);<br>}<br>if(defaultObj instanceof String){<br>return sp.getString(key,(String)defaultObj);<br>}<br>return null;<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>删除指定数据<br>*/<br>public static void remove(Context context,String key){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>editor.remove(key);<br>editor.commit();<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>返回所有键值对<br>*/<br>public Map getAllKey(Context context){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>Map map = sp.getAll();<br>return map;<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>删除所有数据<br>*/<br>public static void clear(Context context){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>SharedPreferences.Editor editor = sp.edit();<br>editor.clear();<br>editor.commit();<br>}</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>检查对应的数据是否存在<br>*/<br>public static boolean contains(Context context,String key){<br>SharedPreferences sp = context.getSharedPreferences(FILE_NAME,context.MODE_PRIVATE);<br>return sp.contains(key);<br>}</li>
+</ul>
+<p>}</p>
+<p>工具类来自菜鸟教程，自己亲手码的，Mark~~~</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/02/29/sharedpreferences-e5-b7-a5-e5-85-b7-e7-b1-bbfor-android/" class="archive-article-date">
+  	<time datetime="2016-02-29T10:42:50.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-29</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android开发/">android开发</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Addi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">hongyang大神</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gold.xitu.io/">掘金</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">关于我&lt;br&gt;&lt;br&gt;广东仔一枚，SCNU在读&lt;br&gt;&lt;br&gt;爱自由，希望世界和平&lt;br&gt;&lt;br&gt;略带文艺气质的Android程序员</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

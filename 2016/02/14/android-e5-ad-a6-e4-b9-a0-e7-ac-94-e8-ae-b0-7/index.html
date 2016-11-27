@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://addi.club">
+  <title>android学习笔记-7 | Addi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android学习笔记-7">
+<meta property="og:url" content="http://addi.club/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/index.html">
+<meta property="og:site_name" content="Addi的博客">
+<meta property="og:description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
+<meta property="og:updated_time" content="2016-11-27T07:15:19.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android学习笔记-7">
+<meta name="twitter:description" content="基于回调的事件处理机制:传播的顺序是: 监听器—&amp;gt;view组件的回调方法—&amp;gt;Activity的回调方法
+&amp;nbsp;
+Handler消息传递机制：Handler的相关方法:
+void handleMessage(Message msg):处理消息的方法,通常是用于被重写!
+sendEmptyMessage(int what):发送空消息
+sendEmptyMessageDelayed(">
+  
+    <link rel="alternative" href="/atom.xml" title="Addi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Addi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">念念不忘 必有回响</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/just">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Addi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/avatar.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Addi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">念念不忘 必有回响</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/just">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/addicheung" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/addicheung" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      android学习笔记-7
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基于回调的事件处理机制"><a href="#基于回调的事件处理机制" class="headerlink" title="基于回调的事件处理机制:"></a>基于回调的事件处理机制:</h3><p>传播的顺序是: <strong>监听器</strong>—&gt;<strong>view组件的回调方法</strong>—&gt;<strong>Activity的回调方法</strong></p>
+<p>&nbsp;</p>
+<h3 id="Handler消息传递机制："><a href="#Handler消息传递机制：" class="headerlink" title="Handler消息传递机制："></a>Handler消息传递机制：</h3><h4 id="Handler的相关方法"><a href="#Handler的相关方法" class="headerlink" title="Handler的相关方法:"></a>Handler的相关方法:</h4><ul>
+<li>void <strong>handleMessage</strong>(Message msg):处理消息的方法,通常是用于被重写!</li>
+<li><strong>sendEmptyMessage</strong>(int what):发送空消息</li>
+<li><strong>sendEmptyMessageDelayed</strong>(int what,long delayMillis):指定延时多少毫秒后发送空信息</li>
+<li><strong>sendMessage</strong>(Message msg):立即发送信息</li>
+<li><strong>sendMessageDelayed</strong>(Message msg):指定延时多少毫秒后发送信息</li>
+<li>final boolean <strong>hasMessage</strong>(int what):检查消息队列中是否包含what属性为指定值的消息 如果是参数为(int what,Object object):除了判断what属性,还需要判断Object属性是否为指定对象的消息<br>使用方法：</li>
+</ul>
+<p>1、Handler写在主线程中</p>
+<p>在主线程中,因为系统已经初始化了一个Looper对象,所以我们直接创建Handler对象,就可以进行信息的发送与处理了！</p>
+<p>&nbsp;</p>
+<p>2、Handler写在子线程中（就需要自己创建一个Looper对象）</p>
+<p><strong>1 )</strong>直接调用Looper.prepare()方法即可为当前线程创建Looper对象,而它的构造器会创建配套的MessageQueue; <strong>2 )</strong>创建Handler对象,重写handleMessage( )方法就可以处理来自于其他线程的信息了! <strong>3 )</strong>调用Looper.loop()方法启动Looper</p>
+<p>&nbsp;</p>
+<h2 id="响应系统设置的事件-Configuration类"><a href="#响应系统设置的事件-Configuration类" class="headerlink" title="响应系统设置的事件(Configuration类)"></a>响应系统设置的事件(Configuration类)</h2><h3 id="Configuration提供的方法列表"><a href="#Configuration提供的方法列表" class="headerlink" title="Configuration提供的方法列表"></a>Configuration提供的方法列表</h3><ul>
+<li><strong>densityDpi</strong>：屏幕密度</li>
+<li><strong>fontScale</strong>：当前用户设置的字体的缩放因子</li>
+<li><strong>hardKeyboardHidden</strong>：判断硬键盘是否可见，有两个可选值：HARDKEYBOARDHIDDEN_NO,HARDKEYBOARDHIDDEN_YES，分别是十六进制的0和1</li>
+<li><strong>keyboard</strong>：获取当前关联额键盘类型：该属性的返回值：KEYBOARD_12KEY（只有12个键的小键盘）、KEYBOARD_NOKEYS、KEYBOARD_QWERTY（普通键盘）</li>
+<li><strong>keyboardHidden</strong>：该属性返回一个boolean值用于标识当前键盘是否可用。该属性不仅会判断系统的硬件键盘，也会判断系统的软键盘（位于屏幕）。</li>
+<li><strong>locale</strong>：获取用户当前的语言环境</li>
+<li><strong>mcc</strong>：获取移动信号的国家码</li>
+<li><strong>mnc</strong>：获取移动信号的网络码<br>ps:国家代码和网络代码共同确定当前手机网络运营商</li>
+<li><strong>navigation</strong>：判断系统上方向导航设备的类型。该属性的返回值：NAVIGATION_NONAV（无导航）、 NAVIGATION_DPAD(DPAD导航）NAVIGATION_TRACKBALL（轨迹球导航）、NAVIGATION_WHEEL（滚轮导航）</li>
+<li><strong>orientation</strong>：获取系统屏幕的方向。该属性的返回值：ORIENTATION_LANDSCAPE（横向屏幕）、ORIENTATION_PORTRAIT（竖向屏幕）</li>
+<li><strong>screenHeightDp</strong>，<strong>screenWidthDp</strong>：屏幕可用高和宽，用dp表示</li>
+<li><strong>touchscreen</strong>：获取系统触摸屏的触摸方式。该属性的返回值：TOUCHSCREEN_NOTOUCH（无触摸屏）、TOUCHSCREEN_STYLUS（触摸笔式触摸屏）、TOUCHSCREEN_FINGER（接收手指的触摸屏）<br>&nbsp;</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-7/" class="archive-article-date">
+  	<time datetime="2016-02-13T16:01:19.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-02-14</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern/">Modern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/addi/">addi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/andorid笔记/">andorid笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<i class="icon-price-tags"></i>
+	<a class="article-category-link" href="/categories/Android/">Android</a>
+	</div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/02/14/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android学习笔记-8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/13/android-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android学习笔记-6</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Addi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Modern/" style="font-size: 16.67px;">Modern</a> <a href="/tags/addi/" style="font-size: 15px;">addi</a> <a href="/tags/andorid笔记/" style="font-size: 15px;">andorid笔记</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android开发/" style="font-size: 18.33px;">android开发</a> <a href="/tags/android笔记/" style="font-size: 13.33px;">android笔记</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/日常/" style="font-size: 10px;">日常</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/lmj623565791">hongyang大神</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gold.xitu.io/">掘金</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">关于我&lt;br&gt;&lt;br&gt;广东仔一枚，SCNU在读&lt;br&gt;&lt;br&gt;爱自由，希望世界和平&lt;br&gt;&lt;br&gt;略带文艺气质的Android程序员</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
